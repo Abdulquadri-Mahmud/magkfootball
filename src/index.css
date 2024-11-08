@@ -8,6 +8,9 @@
 .ball{
     animation-duration: 4s;
 }
+.ps{
+    animation-duration: 3s;
+}
 
 .nav a.link{
     position: relative;
