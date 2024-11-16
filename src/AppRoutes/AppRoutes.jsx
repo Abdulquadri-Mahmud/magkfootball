@@ -20,33 +20,33 @@ import PageNotFound from '../PgaeNotFound/PageNotFound';
 export default function AppRoutes() {
   return (
     <div>
-        <Router>
-          <Header/>
-            <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/news' element={<NewsPage/>}/>
-                <Route path='/gadgets' element={<GadgetsPage/>}/>
-                <Route path='/bookings' element={<BetPage/>}/>
-                <Route path='/profile' element={<Profile/>}/>
+      <Header/>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/news' element={<NewsPage/>}/>
+            <Route path='/gadgets' element={<GadgetsPage/>}/>
+            <Route path='/bookings' element={<BetPage/>}/>
+            <Route path='/profile' element={<Profile/>}/>
 
-                {/* User Routes */}
-                <Route path='/signin' element={<Sign_In/>}/>
-                <Route path='/signup' element={<Sign_Up/>}/>
-                <Route path='/forgot_password' element={<ForgotPassword/>}/>
-                <Route path='/reset_password' element={<ResetPassword/>}/>
+            {/* User Routes */}
+            <Route path='/signin' element={<Sign_In/>}/>
+            <Route path='/signup' element={<Sign_Up/>}/>
+            <Route path='/forgot_password' element={<ForgotPassword/>}/>
+            <Route path='/reset_password' element={<ResetPassword/>}/>
 
-                {/* Admin Routes */}
-                <Route path='/admin_signin' element={<Sign_in/>}/>
-                <Route path='/admin_signup' element={<Sign_up/>}/>
-                <Route path='/admin_forgot_password' element={<Forgot_Password/>}/>
-                <Route path='/admin_reset_password' element={<Reset_Password/>}/>
+            {/* Admin Routes */}
+            <Route path='/admin_signin' element={<Sign_in/>}/>
+            <Route path='/admin_signup' element={<Sign_up/>}/>
+            <Route path='/admin_forgot_password' element={<Forgot_Password/>}/>
+            <Route path='/admin_reset_password' element={<Reset_Password/>}/>
 
-                {/* 404 page */}
-                <Route path='*' element={<PageNotFound/>}/>
+            {/* 404 page */}
+            <Route path='*' element={<PageNotFound/>}/>
 
-            </Routes>
-            <Footer/>
-        </Router>
+        </Routes>
+        <Footer/>
+        {/* <Router>
+        </Router> */}
     </div>
   )
 }
