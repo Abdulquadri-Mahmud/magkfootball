@@ -23,6 +23,7 @@ export default function AppRoutes() {
         <BrowserRouter>
           <Header/>
             <Routes>
+                <Route index element={<Home/>}/>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
