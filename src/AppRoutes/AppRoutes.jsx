@@ -20,7 +20,7 @@ import PageNotFound from '../PgaeNotFound/PageNotFound';
 export default function AppRoutes() {
   return (
     <div>
-        <Router basename="/https://magkfootball.vercel.app/">
+        <Router basename="/">
           <Header/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
