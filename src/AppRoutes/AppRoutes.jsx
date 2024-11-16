@@ -23,8 +23,8 @@ export default function AppRoutes() {
         <Router>
           <Header/>
             <Routes>
-                <Route index element={<Home/>}/>
-                <Route path='/' element={<Home/>}/>
+                <Route exact element={<Home/>}/>
+                <Route exact path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/bookings' element={<BetPage/>}/>
