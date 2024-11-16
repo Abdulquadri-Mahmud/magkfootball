@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter , Routes, Route} from 'react-router-dom'
 import Home from '../Pages/Home';
 import BetPage from '../Pages/BetPage';
 import Footer from '../Components/Footer';
@@ -20,7 +20,7 @@ import PageNotFound from '../PgaeNotFound/PageNotFound';
 export default function AppRoutes() {
   return (
     <div>
-        <Router basename="/">
+        <BrowserRouter>
           <Header/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
@@ -46,7 +46,7 @@ export default function AppRoutes() {
 
             </Routes>
             <Footer/>
-        </Router>
+        </BrowserRouter>
     </div>
   )
 }
