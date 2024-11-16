@@ -16,7 +16,6 @@ import Sign_up from '../auth/admin/Sign_up';
 import Reset_Password from '../auth/admin/Reset_Password';
 import Forgot_Password from '../auth/admin/Forgot_Password';
 import PageNotFound from '../PgaeNotFound/PageNotFound';
-import Dashboard from '../Pages/dashboard/Dashboard';
 
 export default function AppRoutes() {
   return (

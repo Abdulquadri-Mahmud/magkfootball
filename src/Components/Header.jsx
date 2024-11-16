@@ -36,7 +36,9 @@ export default function Header() {
                             <div className="flex item-center font-medium md:gap-4 gap-2 py-1">
                                 <Link to={'/signin'} className='py-1'>Log in</Link>
                                 {/* <span>|</span> */}
-                                <Link to={'/signup'} className='md:w-16 w-16 hidden md:block text-center uppercase bg-cyan-400 py-1 rounded-full'>Join</Link>
+                                <div className="hidden md:block md:w-16 w-16  text-center uppercase bg-cyan-400 py-1 rounded-full">
+                                    <Link to={'/signup'} className=''>Join</Link>
+                                </div>
                             </div>
                         )
                     }
