@@ -25,9 +25,8 @@ export default function Sign_in() {
         });
     }
 
-    useEffect(() => {
-        
-    }), [];
+    console.log(error.message);
+    
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,7 +43,7 @@ export default function Sign_in() {
                 return;
             }
 
-            const signin_api = `https://fake-api-one-rust.vercel.app/api/user/auth/admin-signin`;
+            const signin_api = `https://fake-api-one-rust.vercel.app/api/admin/auth/admin-login`;
 
             const res = await fetch(signin_api, {
                 method : 'POST',
@@ -60,11 +59,11 @@ export default function Sign_in() {
             }
 
             dispatch(adminSigninSuccess(data));
-            navigate('/signin');
+            navigate('/');
                 
         } catch (error) {
             console.log(error);
-            dispatch(adminSigninFailure(error));
+            dispatch(adminSigninFailure(error.message));
         }
     }
 
@@ -99,14 +98,14 @@ export default function Sign_in() {
                 <h2 className="text-3xl font-medium text-center">Admin Login</h2>
                 <p className="text-center text-gray-400 text-sm pt-2">Kindly type in your details to log in</p>
             </div>
-            <form onClick={handleSubmit} className='mt-5'>
+            <form onSubmit={handleSubmit} className='mt-5'>
                 <div className="shadow-md rounded-md relative">
                     <MdOutlineMarkEmailUnread className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} id='email' type="text" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none'/>
+                    <input onChange={handlChange} ref={email} id='email' type="email" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none'/>
                 </div>
                 <div className="mt-5 shadow-md rounded-md relative">
                     <TbPasswordUser className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none'/>
+                    <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none'/>
                     <FaLock onClick={handlePassword} ref={getLockPassIcon} className='absolute right-2 top-4'/>
                 </div>
                 <div className="mt-5 text-end text-blue-500 font-medium text-sm underline animate-bounce">

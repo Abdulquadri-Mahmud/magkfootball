@@ -8,6 +8,7 @@ import { adminSignupFailure, adminSignupStart } from '../../store/adminReducer/a
 
 export default function Sign_up() {
     const [formData, setFormData] = useState({});
+    const [errors, setErrors] = useState(null);
     const {loading, error} = useSelector((state) => state.admin);
 
     const username = useRef(null);
@@ -55,6 +56,7 @@ export default function Sign_up() {
     
             if (data.success === false) {
                 dispatch(adminSignupFailure(data.message));
+                setErrors(data.message);
                 return;
             }
             
@@ -117,7 +119,7 @@ export default function Sign_up() {
                 {
                     error && (
                         <div className=" mt-3 w-full rounded-md">
-                            <p className="text-red-500 text-sm font-medium">{error}</p>
+                            <p className="text-red-500 text-sm font-medium">{}</p>
                         </div>
                     )
                 }
