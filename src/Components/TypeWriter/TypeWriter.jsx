@@ -12,16 +12,16 @@ export default function TypeWriter() {
     }
     return (
     <div className='App'>
-        <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }}>
-            Life is simple{' '}
-        <span style={{ color: 'red', fontWeight: 'bold' }}>
+        <h1 className='text-white md:text-[3rem] text-[1.6rem] font-medium break-words md:leading-[4rem] sm:leading-[3rem] leading-[2rem]'>
+            WELCOME TO{' '}
+        <span>
             {/* Style will be inherited from the parent element */}
             <Typewriter
-            words={['Eat', 'Sleep', 'Code', 'Repeat!']}
-            loop={5}
+            words={['THE BEST SPORT UPDATES AND LIVE BETSLIPS', 'THE BEST SPORT UPDATES AND LIVE BETSLIPS', 'THE BEST SPORT UPDATES AND LIVE BETSLIPS', 'THE BEST SPORT UPDATES AND LIVE BETSLIPS']}
+            loop={'infinite'}
             cursor
-            cursorStyle='_'
-            typeSpeed={70}
+            cursorStyle='|'
+            typeSpeed={100}
             deleteSpeed={50}
             delaySpeed={1000}
             onLoopDone={handleDone}

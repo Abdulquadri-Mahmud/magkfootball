@@ -80,7 +80,6 @@ export default function Section1() {
               <p className='text-sm pt-2 '>Stay ahead of the game with our live football updates! Get real-time scores, match previews, expert analysis, and the latest news on your favorite teams and leagues. Don’t miss a moment—follow us for all the action, all season long</p>
             </div>
           </div>
-
           <div className="md:w-[350px] w-[100%] border-b-4 border-l-4 bg-white shadow-md rounded-md px-2 py-2">
             <Slider {...settings}>
               <div className="">

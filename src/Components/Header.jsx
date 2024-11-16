@@ -12,14 +12,14 @@ export default function Header() {
     const { currentUser } = useSelector((state) => state.user);
     
   return (
-    <div className=" bg-blue-900 shadow-xl py-2">
+    <div className=" bg-blue-900 shadow-md py-2 ">
 
-        <div className='xl:max-w-[90%] mx-auto text-white px-4'>
+        <div className='xl:max-w-[90%] mx-auto text-white md:px-4 px-2 '>
             <div className='flex justify-between items-center'>
                 <div className="">
                     <Link to={'/'}>
                         {/* <img src="/logo.jpg" alt="logo" className='max-w-[150px] rounded-'/> */}
-                        <h1 className='text font-bold text-2xl flex items-center'>MagkkFootballTalk <GiSoccerKick className='text-2xl'/></h1>
+                        <h1 className='text font-bold md:text-2xl text-xl flex items-center'>MagkkFootballTalk <GiSoccerKick className='text-2xl'/></h1>
                     </Link>
                 </div>
                 <div className={`flex items-center md:gap-4 ${currentUser ? 'gap-4' : 'gap-2'}`}>
@@ -36,7 +36,7 @@ export default function Header() {
                             <div className="flex item-center font-medium md:gap-4 gap-2 py-1">
                                 <Link to={'/signin'} className='py-1'>Log in</Link>
                                 {/* <span>|</span> */}
-                                <Link to={'/signup'} className='w-16 text-center uppercase bg-cyan-400 py-1 rounded-full'>Join</Link>
+                                <Link to={'/signup'} className='md:w-16 w-16 text-center uppercase bg-cyan-400 py-1 rounded-full'>Join</Link>
                             </div>
                         )
                     }
