@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter , Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from '../Pages/Home';
 import BetPage from '../Pages/BetPage';
 import Footer from '../Components/Footer';
@@ -20,9 +20,9 @@ import PageNotFound from '../PgaeNotFound/PageNotFound';
 export default function AppRoutes() {
   return (
     <div>
-        <BrowserRouter>
+        <Router>
           <Header/>
-            <Routes>
+            <Switch>
                 <Route index element={<Home/>}/>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
@@ -45,9 +45,9 @@ export default function AppRoutes() {
                 {/* 404 page */}
                 <Route path='*' element={<PageNotFound/>}/>
 
-            </Routes>
+            </Switch>
             <Footer/>
-        </BrowserRouter>
+        </Router>
     </div>
   )
 }
