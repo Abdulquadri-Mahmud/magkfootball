@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from '../Pages/Home';
 import BetPage from '../Pages/BetPage';
 import Footer from '../Components/Footer';
@@ -22,7 +22,7 @@ export default function AppRoutes() {
     <div>
         <Router>
           <Header/>
-            <Switch>
+            <Routes>
                 <Route index element={<Home/>}/>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
@@ -45,7 +45,7 @@ export default function AppRoutes() {
                 {/* 404 page */}
                 <Route path='*' element={<PageNotFound/>}/>
 
-            </Switch>
+            </Routes>
             <Footer/>
         </Router>
     </div>
