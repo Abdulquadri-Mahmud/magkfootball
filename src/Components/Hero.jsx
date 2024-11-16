@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './Header'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

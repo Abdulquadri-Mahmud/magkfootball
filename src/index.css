@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.parent:hover > .child{
+    width: 200px;
+    padding: 10px;
+}
+
 .hero{
     background-image: linear-gradient();
 }

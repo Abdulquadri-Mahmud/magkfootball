@@ -15,6 +15,7 @@ import Sign_in from '../auth/admin/Sign_in';
 import Sign_up from '../auth/admin/Sign_up';
 import Reset_Password from '../auth/admin/Reset_Password';
 import Forgot_Password from '../auth/admin/Forgot_Password';
+import PageNotFound from '../PgaeNotFound/PageNotFound';
 
 export default function AppRoutes() {
   return (
@@ -39,6 +40,10 @@ export default function AppRoutes() {
                 <Route path='/admin_signup' element={<Sign_up/>}/>
                 <Route path='/admin_forgot_password' element={<Forgot_Password/>}/>
                 <Route path='/admin_reset_password' element={<Reset_Password/>}/>
+
+                {/* 404 page */}
+                <Route path='*' element={<PageNotFound/>}/>
+
             </Routes>
             <Footer/>
         </Router>
