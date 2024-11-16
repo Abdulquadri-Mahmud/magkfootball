@@ -59,7 +59,7 @@ export default function Sign_in() {
             }
 
             dispatch(adminSigninSuccess(data));
-            navigate('/');
+            navigate('/admin-dashboard');
                 
         } catch (error) {
             console.log(error);
