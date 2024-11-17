@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Sidebar from './Sidebar'
-import { IoCall } from 'react-icons/io5'
-import { MdEmail } from 'react-icons/md'
 import { FaCartShopping } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import Settings from './settings/Settings'
@@ -14,7 +11,7 @@ export default function Header() {
   return (
     <div className=" bg-blue-900 shadow-md py-2 ">
 
-        <div className='xl:max-w-[90%] mx-auto text-white md:px-4 px-2 '>
+        <div className='xl:max-w-[90%] mx-auto text-white md:px-0 px-2 '>
             <div className='flex justify-between items-center'>
                 <div className="">
                     <Link to={'/'}>
