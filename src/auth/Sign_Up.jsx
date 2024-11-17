@@ -109,19 +109,19 @@ export default function Sign_Up() {
             <form onSubmit={handleSubmit} className='mt-5'>
                 <div className="shadow-md rounded-md relative">
                     <FaRegUser className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={username} id='username' type="text" placeholder='Username' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium'/>
+                    <input onChange={handlChange} ref={username} id='username' type="text" placeholder='Username' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 <div className="my-5 shadow-md rounded-md relative">
                     <FaPhone className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={phone} id='phone' type="number" placeholder='Mobile' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium'/>
+                    <input onChange={handlChange} ref={phone} id='phone' type="number" placeholder='Mobile' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 <div className="shadow-md rounded-md relative">
                     <MdOutlineMarkEmailUnread className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={email} id='email' type="email" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium'/>
+                    <input onChange={handlChange} ref={email} id='email' type="email" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 <div className="mt-5 shadow-md rounded-md relative">
                     <TbPasswordUser className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium'/>
+                    <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                     <FaLock onClick={handlePassword} ref={getLockPassIcon} className='absolute right-2 top-4'/>
                 </div>
                 {

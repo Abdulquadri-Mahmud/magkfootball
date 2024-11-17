@@ -62,6 +62,9 @@ export default function Section1() {
             
             <Slider {...settings}>
               <div className="">
+                <img src="/news.jpg" className='w-full h-[220px] rounded-md' alt="" />
+              </div>
+              <div className="">
                 <img src="/soccer.webp" className='w-full h-[220px] rounded-md' alt="" />
               </div>
               <div className="">

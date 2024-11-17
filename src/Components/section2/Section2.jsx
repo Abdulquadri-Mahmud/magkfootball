@@ -9,18 +9,6 @@ export default function Section2() {
   return (
     <div className='my-10 xl:max-w-[95%] mx-auto text-black px-4'>
         <div className="flex justify-center gap-3 flex-wrap">
-            <ScrollAnimation animateIn="fadeIn">    
-                <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
-                    <div className="flex justify-center pb-2">
-                        <MdOutlineRocketLaunch className='text-5xl text-blue-500 animate-pulse'/>
-                    </div>
-                    <h1 className="md:text-[2rem] text-[1.7rem] font-medium mb-2">Our <span className="text-blue-500">Vission</span></h1>
-                    <div className="absolute top-2 right-2 animate-spin ball">
-                        <IoIosFootball className='text-blue-900 text-[2rem]'/>
-                    </div>
-                    <p className="">To be the most trusted, insightful, and engaging platform for sports enthusiasts and betting professionals, inspiring informed, responsible, and thrilling sports experiences worldwide.</p>
-                </div>
-            </ScrollAnimation>
             
             <ScrollAnimation animateIn="fadeIn">
                 <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
@@ -35,6 +23,18 @@ export default function Section2() {
                 </div>
             </ScrollAnimation> 
             
+            <ScrollAnimation animateIn="fadeIn">    
+                <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
+                    <div className="flex justify-center pb-2">
+                        <MdOutlineRocketLaunch className='text-5xl text-blue-500 animate-pulse'/>
+                    </div>
+                    <h1 className="md:text-[2rem] text-[1.7rem] font-medium mb-2">Our <span className="text-blue-500">Vission</span></h1>
+                    <div className="absolute top-2 right-2 animate-spin ball">
+                        <IoIosFootball className='text-blue-900 text-[2rem]'/>
+                    </div>
+                    <p className="">To be the most trusted, insightful, and engaging platform for sports enthusiasts and betting professionals, inspiring informed, responsible, and thrilling sports experiences worldwide.</p>
+                </div>
+            </ScrollAnimation>
 
             <ScrollAnimation animateIn="fadeIn">    
                 <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">

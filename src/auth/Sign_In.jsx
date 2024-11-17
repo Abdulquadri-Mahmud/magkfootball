@@ -95,11 +95,11 @@ export default function Sign_In() {
             <form onSubmit={handleSubmit} className='mt-5'>
                 <div className="shadow-md rounded-md relative">
                     <MdOutlineMarkEmailUnread className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={email} id='email' type="text" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none'/>
+                    <input onChange={handlChange} ref={email} id='email' type="text" placeholder='Example@gmail.com' className='px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
                 </div>
                 <div className="mt-5 shadow-md rounded-md relative">
                     <TbPasswordUser className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none'/>
+                    <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
                     <FaLock onClick={handlePassword} ref={getLockPassIcon} className='absolute right-2 top-4'/>
                 </div>
                 <div className="mt-5 text-end text-blue-500 font-medium text-sm underline animate-bounce">

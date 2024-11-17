@@ -4,12 +4,17 @@
 
 
 .parent:hover > .child{
-    width: 200px;
+    width: 250px;
     padding: 10px;
 }
 
 .hero{
     background-image: linear-gradient();
+}
+@media (max-width: 420px), (max-height: 800px){
+    .heros{
+        height: 75vh;
+    }
 }
 .ball{
     animation-duration: 4s;
@@ -72,4 +77,8 @@
 
 .form{
     z-index: -1;
+}
+
+.bord{
+    border: 1px solid rgb(161, 160, 160);
 }
