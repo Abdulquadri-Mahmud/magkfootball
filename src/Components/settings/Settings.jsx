@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 export default function Settings() {
-    const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
 
   return (
     <div>

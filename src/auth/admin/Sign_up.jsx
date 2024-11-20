@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { FaLock, FaPhone, FaRegUser } from 'react-icons/fa';
 import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { TbPasswordUser } from 'react-icons/tb';
+import { FaRegAddressBook } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { adminSignupFailure, adminSignupStart } from '../../store/adminReducer/adminReducer';
@@ -12,6 +13,9 @@ export default function Sign_up() {
     const {loading, error} = useSelector((state) => state.admin);
 
     const username = useRef(null);
+    const firstname = useRef(null);
+    const lastname = useRef(null);
+    const address = useRef(null);
     const password = useRef(null);
     const email = useRef(null);
 
@@ -107,6 +111,18 @@ export default function Sign_up() {
                 <div className="shadow-md rounded-md relative">
                     <FaRegUser className='absolute left-2 top-4'/>
                     <input onChange={handlChange} ref={username} id='username' type="text" placeholder='Username' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
+                </div>
+                <div className="shadow-md rounded-md relative">
+                    <FaRegUser className='absolute left-2 top-4'/>
+                    <input onChange={handlChange} ref={firstname} id='firstname' type="text" placeholder='Firstname' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
+                </div>
+                <div className="shadow-md rounded-md relative">
+                    <FaRegUser className='absolute left-2 top-4'/>
+                    <input onChange={handlChange} ref={lastname} id='lastname' type="text" placeholder='Lastname' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
+                </div>
+                <div className="shadow-md rounded-md relative">
+                    <FaRegAddressBook className='absolute left-2 top-4'/>
+                    <input onChange={handlChange} ref={address} id='address' type="text" placeholder='Address' className='px-2 py-3 w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
                 </div>
                 <div className="shadow-md rounded-md relative mt-6">
                     <MdOutlineMarkEmailUnread className='absolute left-2 top-4'/>

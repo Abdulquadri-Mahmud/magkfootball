@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -48,6 +48,8 @@ export default function Hero() {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
+
+  
 
   return (
     <div className='overflow-hidden md:px-0 px-6 lg:h-[75vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero bg-gradient-to-t from-blue-600 to-blue-950 flex justify-center items-center heros'>
