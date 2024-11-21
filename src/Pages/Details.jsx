@@ -10,7 +10,8 @@ import { TbTruckDelivery } from 'react-icons/tb';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { changeQuantity } from '../store/cart/cartReducer';
+import { addToCart, changeQuantity } from '../store/cart/cartReducer';
+import { addWishlist } from '../store/wishlist/wishlist';
 
 export default function Details() {
       const { id } = useParams();

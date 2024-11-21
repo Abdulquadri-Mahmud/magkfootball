@@ -81,8 +81,8 @@ export default function CartPage() {
             </div>
             <div className="mt-7 flex justify-center gap-2 flex-wrap">
                 <div className="flex-1 relative bg-white md:p-4 p-2 rounded-md">
-                    <div className="w-full">
-                        <table className='rounded-md w-full'>
+                    <div className="w-full overflow-x-scroll">
+                        <table className='table rounded-md w-full'>
                             <thead className='bg-blue-300'>
                                 <tr>
                                     <th className='rounded-tl-md font-medium p-[10px] text-center'>Image</th>
@@ -98,7 +98,7 @@ export default function CartPage() {
                                     total += item.productPrice * item.quantity ;
 
                                     return (
-                                        <tr className='' key={index}>
+                                        <tr className='px-2' key={index}>
                                             <td className='py-2'>
                                                 <img src={item.productImage} alt="" className='rounded-md max-w-[50px] max-h-[50px]'/>
                                             </td>
@@ -128,7 +128,7 @@ export default function CartPage() {
                         </table>
                     </div>
                 </div>
-                <div className='md:max-w-[300px] max-w-[97%] mx-auto bg-white p-3 rounded-md'>
+                <div className='md:max-w-[300px] max-w-[100%] mx-auto bg-white p-3 rounded-md'>
                     <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300' justifyContent={'space-between'} alignItems={'center'} pb={3} borderBottomWidth={1} borderBottomColor={'gray.100'}>
                         <h1 className='text-sm font-medium'>Order Summary</h1>
                         <p className='text-sm'>Subtotal ({items.length} Item)</p>
