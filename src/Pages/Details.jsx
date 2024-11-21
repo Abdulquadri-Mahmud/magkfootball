@@ -118,7 +118,15 @@ export default function Details() {
                               <div className="flex gap-2 flex-wrap">
                                     <div className="2xl:w-[350px] w-[300px]">
                                           <div className="w-[300px] flex md:justify-start justify-center">
-                                                <img src={image} alt="" ref={displayImage} className='max-w-full object-fill'/>
+                                                {
+                                                      image !== undefined ? (
+                                                            <>
+                                                                  <img src={image[0]} alt="" ref={displayImage} className='max-w-full object-fill'/>
+                                                            </>
+                                                      ) : (
+                                                            <img src={image} alt="" ref={displayImage} className='max-w-full object-fill'/> 
+                                                      )
+                                                }
                                           </div>
                                           <div className="py-2">
                                                 {
@@ -127,8 +135,8 @@ export default function Details() {
                                                             {
                                                                   image.length > 0 && image.map((img) => {
                                                                         return (
-                                                                              <div className="">
-                                                                              <img src={img} onClick={() => handleClick(img)} className='max-w-14' alt="" />
+                                                                              <div className="max-w-14 bg-blue-300 p-1 rounded-md">
+                                                                                    <img src={img} onClick={() => handleClick(img)} className='' alt="" />
                                                                               </div>
                                                                         )
                                                                   })
@@ -139,10 +147,6 @@ export default function Details() {
                                           </div>
                                     </div>
                                     <div className="flex-1 bg-white md:mt-0 mt-4 pl-3">
-                                          {/* <div className="flex items-center gap-1 bg-pink-200 py-1 px-2 rounded-r-xl w-[140px]">
-                                                <FaSmileBeam className='text-sm text-pink-600'/>
-                                                <Heading className='lg:text-3xl text-2xl font-medium uppercase' >X</span>ify <span className="black">Now</span></Heading>
-                                          </div> */}
                                           <div className=" mt-4 border-b-[1px] border-b-gray-300 pb-2">
                                                 <h2 className='text-xl font-medium'>{name}</h2>
                                                 <div className="mt-3">
@@ -180,7 +184,7 @@ export default function Details() {
                                                       <div className="flex items-center gap-2">
                                                             <p className='text-sm'>Quantity: </p>
                                                             <div className="flex gap-2 items-center">
-                                                                  <button type='button' className='bg-zinc-300 w-7 h-7 rounded-md flex justify-center items-center' onClick={decreaseQuantity}><CgMathMinus className='text-sm'/></button>
+                                                                  <button type='button' className='bg-zinc-200 w-7 h-7 rounded-md flex justify-center items-center' onClick={decreaseQuantity}><CgMathMinus className='text-sm'/></button>
                                                                   <span className="" ref={logQuantity}>
                                                                   {
                                                                         items.map((item) => (
@@ -196,11 +200,11 @@ export default function Details() {
                                                                         ))
                                                                   }
                                                                   </span>
-                                                                  <button type='button' className='bg-zinc-300 w-7 h-7 rounded-md flex justify-center items-center' onClick={increaseQuantity}><RiAddFill className='text-sm'/></button>
+                                                                  <button type='button' className='bg-zinc-200 w-7 h-7 rounded-md flex justify-center items-center' onClick={increaseQuantity}><RiAddFill className='text-sm'/></button>
                                                             </div>
                                                       </div>
                                                       
-                                                      <div className="bg-blue-200 px-2 rounded-md mt-5">
+                                                      <div className="bg-zinc-100 py-2 px-2 rounded-md mt-5">
                                                             <p className='text-sm font-medium text-center'>Call us for Bulk Purchase</p>
                                                             <div className="flex justify-center items-center text-blue-600 font-medium">
                                                                   <IoMdCall/>
