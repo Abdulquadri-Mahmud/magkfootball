@@ -49,10 +49,8 @@ export default function Hero() {
     prevArrow: <SamplePrevArrow />
   };
 
-  
-
   return (
-    <div className='overflow-hidden md:px-0 px-6 lg:h-[75vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero bg-gradient-to-t from-blue-600 to-blue-950 flex justify-center items-center heros'>
+    <div className='overflow-hidden md:px-0 px-6 lg:h-[75vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero bg-gradient-to-tr from-blue-600 to-blue-950 flex justify-center items-center heros'>
       <div className="xl:max-w-[90%] mx-auto flex flex-wrap lg:flex-row flex-col-reverse justify-around items-center w-full">
         
         <div className="flex-1 lg:text-start text-center w-full">

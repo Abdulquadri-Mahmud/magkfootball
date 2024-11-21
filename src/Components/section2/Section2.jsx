@@ -11,7 +11,7 @@ export default function Section2() {
         <div className="flex justify-center gap-3 flex-wrap">
             
             <ScrollAnimation animateIn="fadeIn">
-                <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
+                <div className="relative h-[300px] rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
                     <div className="flex justify-center pb-2">
                         <FaRegLightbulb className='text-5xl text-blue-500 animate-pulse'/>
                     </div>
@@ -24,7 +24,7 @@ export default function Section2() {
             </ScrollAnimation> 
             
             <ScrollAnimation animateIn="fadeIn">    
-                <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
+                <div className="relative h-[300px] rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
                     <div className="flex justify-center pb-2">
                         <MdOutlineRocketLaunch className='text-5xl text-blue-500 animate-pulse'/>
                     </div>
@@ -37,7 +37,7 @@ export default function Section2() {
             </ScrollAnimation>
 
             <ScrollAnimation animateIn="fadeIn">    
-                <div className="relative rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
+                <div className="relative h-[300px] rounded-md shadow-md border-b-4 border-b-blue-500 p-3 md:w-[350px] w-[100%] text-center">
                     <div className="flex justify-center pb-2">
                         <IoDiamond className='text-5xl text-blue-500 animate-pulse'/>
                     </div>

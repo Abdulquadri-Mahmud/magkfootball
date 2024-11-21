@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <div className='bg-blue-950 text-white'>
+    <div className='bg-gradient-to-b from-blue-900 to-blue-950 text-white'>
         <div className="xl:max-w-[90%] w-[97%] flex justify-between flex-col sm:flex-row gap-6 flex-wrap mx-auto md:py-10 py-10 px-3">
             
             <div className="md:w-[350px] w-full">

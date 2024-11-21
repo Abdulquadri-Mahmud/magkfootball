@@ -16,6 +16,7 @@ import Sign_up from '../auth/admin/Sign_up';
 import Reset_Password from '../auth/admin/Reset_Password';
 import Forgot_Password from '../auth/admin/Forgot_Password';
 import PageNotFound from '../PgaeNotFound/PageNotFound';
+import Details from '../Pages/Details';
 
 export default function AppRoutes() {
   return (
@@ -26,7 +27,10 @@ export default function AppRoutes() {
                 <Route exact element={<Home/>}/>
                 <Route exact path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
+
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
+                <Route path='/product-details/:id' element={<Details/>}/>
+
                 <Route path='/bookings' element={<BetPage/>}/>
                 <Route path='/profile' element={<Profile/>}/>
 

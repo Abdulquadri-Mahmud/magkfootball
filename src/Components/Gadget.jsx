@@ -4,13 +4,13 @@ import { TbCurrencyNaira } from 'react-icons/tb'
 import { productContext } from '../Pages/Home'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cart/cartReducer';
+import { Link } from 'react-router-dom';
+import { IoHeart } from 'react-icons/io5';
 
 export default function Gadget() {
 
     const products = useContext(productContext);
     const [alert, setAlert] = useState(false);
-
-    console.log(products);
 
     const dispatch = useDispatch();
 
@@ -36,30 +36,22 @@ export default function Gadget() {
     }
     
   return (
-    <div className='mb-10'>
-        <div className="text-center">
-            <h1 className='font-medium md:text-4xl text-2xl pb-2'>GADGETS</h1>
-            <p className="text-sm text-gray-500">Upgrade your tech game! Explore our top-quality gadgets at unbeatable prices—shop now for the latest in innovation <br /> and style!</p>
-        </div>
-
-        <div className=" mt-4 xl:max-w-[85%] w-[97%] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-            {
-                products.length > 0 && products.map((product) => {
-                    return (
-                        <div key={product._id} className="shadow-md rounded-md">
-                            <img src={product.image} className='w-full rounded-md' alt="" />
-                            <div className="p-3">
-                                <h2 className='font-medium pb-4'>{product.name}</h2>
-                                <div className="flex items-center justify-between">
-                                    <p className="font-medium flex items-center"><TbCurrencyNaira />{product.price}</p>
-                                    <button onClick={handleCart} className='bg-blue-500 p-1 rounded-full text-white text'><FaCartShopping /></button>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })
-            }
-
+    <div key={_id} className="shadow-md rounded-md relative">
+        <Link to={`/product-details/${_id}`}>
+            <div className="flex justify-center pt-0 md:w-[200px] h-[150px] w-[140px] mx-auto">
+                <img src={image} className='max-w-full object-cover object-top' alt="" />
+            </div>
+        </Link>
+        <button onClick={handleWishlistItem} className=" text-white cursor-pointer hover:text-blue-900 active:text-blue-900 focus:text-blue-900 absolute top-3 right-3 w-[30px] h-[30px] bg-blue-300 flex justify-center items-center rounded-full">
+            <IoHeart className='text-xl'/>
+        </button>
+        <div className="p-3">
+            <h2 className='py-1 font-medium md:text-center truncate'>{name}</h2>
+            <p className="truncate">{description}</p>
+            <div className="flex items-center justify-between">
+                <p className="font-medium flex items-center"><TbCurrencyNaira />{price}</p>
+            </div>
+            <button onClick={handleCart} className='bg-blue-950 font-medium py-2 px-3 rounded-sm mt-3 w-full text-white text'>Add To Cart</button>
         </div>
     </div>
   )

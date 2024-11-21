@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaCartShopping } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
@@ -7,9 +7,22 @@ import { GiSoccerKick } from 'react-icons/gi'
 
 export default function Header() {
     const { currentUser } = useSelector((state) => state.user);
+    const [cartLength, setCartLength] = useState(0);
+    const { items } = useSelector((state) => state.cart);
+
+    useEffect(() => {
+
+        if (items.length >= 1) {
+            setCartLength(items.length);
+            return;
+        }else{
+            setCartLength(0);
+        }
+
+    })
     
   return (
-    <div className=" bg-blue-900 shadow-md py-2 ">
+    <div className=" bg-blue-900 shadow-md py-2 top-0 sticky z-20">
 
         <div className='xl:max-w-[90%] mx-auto text-white md:px-0 px-2 '>
             <div className='flex justify-between items-center'>
@@ -22,7 +35,7 @@ export default function Header() {
                 <div className={`flex items-center md:gap-4 ${currentUser ? 'gap-4' : 'gap-2'}`}>
                     <div className="relative">
                         <FaCartShopping className='mt-1 text-xl'/>
-                        <p className="text-sm font-medium absolute -top-3 -right-1">0</p>
+                        <p className="text-sm font-medium absolute -top-3 -right-1">{cartLength}</p>
                     </div>
                     {
                         currentUser ? (
@@ -43,7 +56,7 @@ export default function Header() {
             </div>
         </div>
 
-        <div className="pt-3">
+        <div className="pt-2">
             <div className="hidde md:block xl:max-w-[90%] mx-auto">
                 <div className=" nav flex md:gap-7 gap-4 font-medium justify-center items-center text-[15px] nav">
                     <Link to={'/'} className=' text-white link hover:text-blue-500 duration-200'>Home</Link>
