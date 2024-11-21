@@ -34,8 +34,10 @@ export default function Header() {
                 </div>
                 <div className={`flex items-center md:gap-4 ${currentUser ? 'gap-4' : 'gap-2'}`}>
                     <div className="relative">
-                        <FaCartShopping className='mt-1 text-xl'/>
-                        <p className="text-sm font-medium absolute -top-3 -right-1">{cartLength}</p>
+                        <Link to={'/cart'}>
+                            <FaCartShopping className='mt-1 text-xl'/>
+                            <p className="text-sm font-medium absolute -top-3 -right-1">{cartLength}</p>
+                        </Link>
                     </div>
                     {
                         currentUser ? (

@@ -11,12 +11,9 @@ import Header from '../Components/Header';
 import ForgotPassword from '../auth/ForgotPassword';
 import ResetPassword from '../auth/ResetPassword';
 import Profile from '../Pages/Profile';
-import Sign_in from '../auth/admin/Sign_in';
-import Sign_up from '../auth/admin/Sign_up';
-import Reset_Password from '../auth/admin/Reset_Password';
-import Forgot_Password from '../auth/admin/Forgot_Password';
 import PageNotFound from '../PgaeNotFound/PageNotFound';
 import Details from '../Pages/Details';
+import CartPage from '../Pages/CartPage';
 
 export default function AppRoutes() {
   return (
@@ -30,6 +27,7 @@ export default function AppRoutes() {
 
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
+                <Route path='/cart' element={<CartPage/>}/>
 
                 <Route path='/bookings' element={<BetPage/>}/>
                 <Route path='/profile' element={<Profile/>}/>
@@ -39,12 +37,6 @@ export default function AppRoutes() {
                 <Route path='/signup' element={<Sign_Up/>}/>
                 <Route path='/forgot_password' element={<ForgotPassword/>}/>
                 <Route path='/reset_password' element={<ResetPassword/>}/>
-
-                {/* Admin Routes */}
-                <Route path='/admin_signin' element={<Sign_in/>}/>
-                <Route path='/admin_signup' element={<Sign_up/>}/>
-                <Route path='/admin_forgot_password' element={<Forgot_Password/>}/>
-                <Route path='/admin_reset_password' element={<Reset_Password/>}/>
                 
                 {/* 404 page */}
                 <Route path='*' element={<PageNotFound/>}/>

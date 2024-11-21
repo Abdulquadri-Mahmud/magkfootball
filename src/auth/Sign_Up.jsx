@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { FaLock, FaPhone, FaRegUser } from 'react-icons/fa';
+import { FaLock, FaPhone, FaRegAddressBook, FaRegUser } from 'react-icons/fa';
 import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { TbPasswordUser } from 'react-icons/tb';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,6 +13,9 @@ export default function Sign_Up() {
 
     const phone = useRef(null);
     const username = useRef(null);
+    const firstname = useRef(null);
+    const lastname = useRef(null);
+    const address = useRef(null);
     const password = useRef(null);
     const email = useRef(null);
     
@@ -101,17 +104,27 @@ export default function Sign_Up() {
 
   return (
     <div className='md:py-10 py-12'>
-        <div className="relative bg-white md:w-[350px] w-[97%] mx-auto p-3 rounded-md shadow-lg">
+        <div className="relative bg-white xl:w-[45%] md:w-[350px] w-[97%] mx-auto p-3 rounded-md shadow-lg">
             <div className="">
                 <h2 className="text-3xl font-medium text-center">Register Now</h2>
                 <p className="text-center text-gray-400 text-sm pt-2">Our pride is to give you the best</p>
             </div>
             <form onSubmit={handleSubmit} className='mt-5'>
+                <div className="flex items-center justify-around md:gap-2 gap-0 flex-wrap w-full">
+                    <div className="shadow-md rounded-md relative md:w-[48.5%] w-full">
+                        <FaRegUser className='absolute left-2 top-4'/>
+                        <input onChange={handlChange} ref={firstname} id='firstname' type="text" placeholder='Firstname' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    </div>
+                    <div className=" my-3 shadow-md rounded-md relative md:w-[48.5%] w-full">
+                        <FaRegUser className='absolute left-2 top-4'/>
+                        <input onChange={handlChange} ref={lastname} id='lastname' type="text" placeholder='Lastname' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    </div>
+                </div>
                 <div className="shadow-md rounded-md relative">
                     <FaRegUser className='absolute left-2 top-4'/>
                     <input onChange={handlChange} ref={username} id='username' type="text" placeholder='Username' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
-                <div className="my-5 shadow-md rounded-md relative">
+                <div className="my-3 shadow-md rounded-md relative">
                     <FaPhone className='absolute left-2 top-4'/>
                     <input onChange={handlChange} ref={phone} id='phone' type="number" placeholder='Mobile' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
@@ -119,10 +132,14 @@ export default function Sign_Up() {
                     <MdOutlineMarkEmailUnread className='absolute left-2 top-4'/>
                     <input onChange={handlChange} ref={email} id='email' type="email" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
-                <div className="mt-5 shadow-md rounded-md relative">
+                <div className="mt-3 shadow-md rounded-md relative">
                     <TbPasswordUser className='absolute left-2 top-4'/>
                     <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                     <FaLock onClick={handlePassword} ref={getLockPassIcon} className='absolute right-2 top-4'/>
+                </div>
+                <div className="mt-3 shadow-md rounded-md relative">
+                    <FaRegAddressBook className='absolute left-2 top-4'/>
+                    <input onChange={handlChange} ref={address} id='address' type="password" placeholder='Address...' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 {
                     error && (

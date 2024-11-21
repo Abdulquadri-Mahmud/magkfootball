@@ -6,10 +6,10 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cart/cartReducer';
 import { Link } from 'react-router-dom';
 import { IoHeart } from 'react-icons/io5';
+import { productsContext } from '../Pages/GadgetsPage';
 
-export default function Gadget() {
-
-    const products = useContext(productContext);
+export default function AllProducts() {
+  const products = useContext(productsContext);
     const [alert, setAlert] = useState(false);
 
     const dispatch = useDispatch();
@@ -34,9 +34,8 @@ export default function Gadget() {
       dispatch(addWishlist(getCarts));
       setAlert("Your item has been saved.");
     }
-    
   return (
-    <div key={_id} className="shadow-md rounded-md relative">
+    <div key={_id} className="shadow-md rounded-md relative bg-white">
         <Link to={`/product-details/${_id}`}>
             <div className="flex justify-center pt-0 md:w-[200px] h-[150px] w-[140px] mx-auto">
                 <img src={image} className='max-w-full object-cover object-top' alt="" />
