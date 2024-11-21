@@ -10,7 +10,6 @@ export default function Sign_In() {
     const [formData, setFormData] = useState({});
 
     const {loading, error} = useSelector((state) => state.user);
-
     const getLockPassIcon = useRef(null);
     const password = useRef(null);
     const email = useRef(null);
@@ -54,10 +53,12 @@ export default function Sign_In() {
                 dispatch(signinFailure(data.message));
                 return;
             }
+
             dispatch(signinSuccess(data));
             navigate('/');
+            
         } catch (error) {
-            dispatch(signinFailure(error))
+            dispatch(signinFailure(error));
         }
     }
 
@@ -102,16 +103,16 @@ export default function Sign_In() {
                     <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none bord'/>
                     <FaLock onClick={handlePassword} ref={getLockPassIcon} className='absolute right-2 top-4'/>
                 </div>
-                <div className="mt-5 text-end text-blue-500 font-medium text-sm underline animate-bounce">
-                    <Link to={'/forgot_password'}>Forgot Password</Link>
-                </div>
                 {
                     error && (
                         <div className=" mt-3 w-full rounded-md">
-                            <p className="text-red-500 text-sm font-medium">{error}</p>
+                            {/* <p className="text-red-500 text-sm font-medium">{error}</p> */}
                         </div>
                     )
                 }
+                <div className="mt-5 text-end text-blue-500 font-medium text-sm underline animate-bounce">
+                    <Link to={'/forgot_password'}>Forgot Password</Link>
+                </div>
                 <div className="w-full mt-6">
                     <button type='submit' className='bg-blue-900 w-full py-2 rounded-md text-white font-medium text-xl'>
                         {

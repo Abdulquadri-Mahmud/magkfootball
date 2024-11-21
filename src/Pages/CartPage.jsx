@@ -65,7 +65,7 @@ export default function CartPage() {
 
   return (
     <div className='bg-zinc-100'>
-        <div className="py-10 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
+        <div className="md:py-10 py-5 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
             <div className="flex gap-1 items-center">
                 <Link to={'/'} className='text-[13px] text-gray-500'>Home</Link>
                 <PiGreaterThan className='text-[13px] text-gray-500 pt-1'/>
@@ -81,7 +81,7 @@ export default function CartPage() {
             </div>
             <div className="mt-7 flex justify-center gap-2 flex-wrap">
                 <div className="flex-1 relative bg-white md:p-4 p-2 rounded-md">
-                    <div className="w-full overflow-x-scroll">
+                    <div className="w-[100%] overflow-x-scroll">
                         <table className='table rounded-md w-full'>
                             <thead className='bg-blue-300'>
                                 <tr>

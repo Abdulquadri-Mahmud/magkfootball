@@ -83,7 +83,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="">
+            {/* <div className="">
               <div className="flex justify-center">
                 <img src="/gadget2.png" className='w-[100%] drop-shadow-2xl ps ' alt="" />
               </div>
@@ -93,7 +93,7 @@ export default function Hero() {
               <div className="flex justify-center">
                 <img src="/gadgets3.png" className='w-[100%] drop-shadow-2xl ps ball' alt="" />
               </div>
-            </div>
+            </div> */}
 
           </Slider>
         </div>

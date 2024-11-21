@@ -39,7 +39,8 @@ export default function Home() {
   return (
     <div className=''>
         <Hero/>
-        <Section2/>
+        {/* <Section2/> */}
+        <BetsSection/>
         <div className="my-20 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
           <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
             <div className="mb-3">
@@ -59,7 +60,6 @@ export default function Home() {
             }
           </div>
         </div>
-        <BetsSection/>
         <Section1/>
     </div>
   )

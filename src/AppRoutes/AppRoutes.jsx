@@ -30,7 +30,7 @@ export default function AppRoutes() {
                 <Route path='/cart' element={<CartPage/>}/>
 
                 <Route path='/bookings' element={<BetPage/>}/>
-                <Route path='/profile' element={<Profile/>}/>
+                <Route path='/profile/:id' element={<Profile/>}/>
 
                 {/* User Routes */}
                 <Route path='/signin' element={<Sign_In/>}/>
