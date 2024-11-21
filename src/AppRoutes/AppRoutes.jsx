@@ -15,6 +15,14 @@ import PageNotFound from '../PgaeNotFound/PageNotFound';
 import Details from '../Pages/Details';
 import CartPage from '../Pages/CartPage';
 import Private_Route from '../Components/privateRoute/Private_Route';
+import BetKing from '../Pages/BetKing';
+import XBet from '../Pages/XBet';
+import Betano from '../Pages/Betano';
+import MSport from '../Pages/MSport';
+import PariMatch from '../Pages/PariMatch';
+import Bet22 from '../Pages/Bet22';
+import SportyBet from '../Pages/SportyBet';
+import Bet9Ja from '../Pages/Bet9Ja';
 
 export default function AppRoutes() {
   return (
@@ -28,12 +36,45 @@ export default function AppRoutes() {
 
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
+
                 <Route path='/cart' element={<CartPage/>}/>
                 <Route element={<Private_Route/>}>
                   <Route path='/bookings' element={<BetPage/>}/>
                 </Route>
                 <Route element={<Private_Route/>}>
                   <Route path='/profile/:id' element={<Profile/>}/>
+                </Route>
+
+                {/* Bet Routes */}
+                <Route element={<Private_Route/>}>
+                  <Route path='/bet9ja-betslips' element={<Bet9Ja/>}/>
+                </Route>
+                <Route element={<Private_Route/>}>
+                  <Route path='/betking-betslips' element={<BetKing/>}/>
+                </Route>
+
+                <Route element={<Private_Route/>}>
+                  <Route path='/xbet-betslips' element={<XBet/>}/>
+                </Route>
+
+                <Route element={<Private_Route/>}>
+                  <Route path='/batano-betslips' element={<Betano/>}/>
+                </Route>
+
+                <Route element={<Private_Route/>}>
+                  <Route path='/msport-betslips' element={<MSport/>}/>
+                </Route>
+
+                <Route element={<Private_Route/>}>
+                  <Route path='/parimatch-betslips' element={<PariMatch/>}/>
+                </Route>
+
+                <Route element={<Private_Route/>}>
+                  <Route path='/22bet-betslips' element={<Bet22/>}/>
+                </Route>
+
+                <Route element={<Private_Route/>}>
+                  <Route path='/sporty-betslips' element={<SportyBet/>}/>
                 </Route>
 
                 {/* User Routes */}
