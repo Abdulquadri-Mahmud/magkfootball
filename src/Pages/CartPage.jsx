@@ -128,7 +128,7 @@ export default function CartPage() {
                         </table>
                     </div>
                 </div>
-                <div className='md:max-w-[300px] max-w-[100%] mx-auto bg-white p-3 rounded-md'>
+                <div className='md:max-w-[300px] w-[100%] mx-auto bg-white p-3 rounded-md'>
                     <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300' justifyContent={'space-between'} alignItems={'center'} pb={3} borderBottomWidth={1} borderBottomColor={'gray.100'}>
                         <h1 className='text-sm font-medium'>Order Summary</h1>
                         <p className='text-sm'>Subtotal ({items.length} Item)</p>

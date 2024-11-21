@@ -14,6 +14,7 @@ import Profile from '../Pages/Profile';
 import PageNotFound from '../PgaeNotFound/PageNotFound';
 import Details from '../Pages/Details';
 import CartPage from '../Pages/CartPage';
+import Private_Route from '../Components/privateRoute/Private_Route';
 
 export default function AppRoutes() {
   return (
@@ -28,9 +29,12 @@ export default function AppRoutes() {
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
                 <Route path='/cart' element={<CartPage/>}/>
-
-                <Route path='/bookings' element={<BetPage/>}/>
-                <Route path='/profile/:id' element={<Profile/>}/>
+                <Route element={<Private_Route/>}>
+                  <Route path='/bookings' element={<BetPage/>}/>
+                </Route>
+                <Route element={<Private_Route/>}>
+                  <Route path='/profile/:id' element={<Profile/>}/>
+                </Route>
 
                 {/* User Routes */}
                 <Route path='/signin' element={<Sign_In/>}/>

@@ -106,7 +106,7 @@ export default function Sign_In() {
                 {
                     error && (
                         <div className=" mt-3 w-full rounded-md">
-                            {/* <p className="text-red-500 text-sm font-medium">{error}</p> */}
+                            <p className="text-red-500 text-sm font-medium">{error}</p>
                         </div>
                     )
                 }
