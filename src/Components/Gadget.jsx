@@ -25,7 +25,7 @@ export default function Gadget() {
       productPrice: price,
       quantity: 1
     };
-  
+
     const handleCart = () => {
         dispatch(addToCart(getCarts))
     }

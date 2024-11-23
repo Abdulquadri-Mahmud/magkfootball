@@ -14,7 +14,7 @@ export default function Loader() {
             <div className="flex items-center justify-between">
                 <p className="font-medium flex items-center"></p>
             </div>
-            <button className='font-medium py-2 px-3 rounded-sm mt-3 w-full animate-pulse text-white text'>Add To Cart</button>
+            <button className='font-medium py-2 px-3 rounded-sm mt-3 w-full animate-pulse text-white text'></button>
         </div>
   </div>
   )

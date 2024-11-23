@@ -5,6 +5,7 @@ import Section1 from '../Components/sections/Section1'
 import Section2 from '../Components/section2/Section2'
 import BetsSection from '../Components/betsSection/BetsSection'
 import { useSelector } from 'react-redux'
+import About_page from './About_page'
 
 export const productContext = createContext();
 const Gadget = React.lazy(() => import('../Components/Gadget'));
@@ -40,7 +41,10 @@ export default function Home() {
     <div className=''>
         <Hero/>
         {/* <Section2/> */}
-        <BetsSection/>
+        <About_page/>
+        <div className="mt-8">
+          <BetsSection/>
+        </div>
         <div className="my-20 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
           <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
             <div className="mb-3">
@@ -60,7 +64,7 @@ export default function Home() {
             }
           </div>
         </div>
-        <Section1/>
+        {/* <Section1/> */}
     </div>
   )
 }

@@ -139,7 +139,7 @@ export default function Sign_Up() {
                 </div>
                 <div className="mt-3 shadow-md rounded-md relative">
                     <FaRegAddressBook className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={address} id='address' type="password" placeholder='Address...' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    <input onChange={handlChange} ref={address} id='address' type="text" placeholder='Address...' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 {
                     error && (

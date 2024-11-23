@@ -8,13 +8,13 @@ export default function BetPage() {
         <div className="">
             <div className="my-10" id=''>
                 <div className="text-center">
-                    <h1 className='font-medium md:text-4xl text-2xl pb-2'>BETSLIPS</h1>
+                    <h1 className='font-medium md:text-4xl text-4xl pb-2'>BETSLIPS</h1>
                     <p className="text-sm text-gray-500">We have provided the best and the most accurate bestlip for you</p>
                     <p className="text-sm text-gray-500">Click on the link and get started</p>
                 </div>
         
-            <div className='mt-4 xl:max-w-[85%] w-[95%] mx-auto flex flex-wrap gap-3 justify-center items-center'>
-                <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md flex justify-center items-center bg-gray-800 ">
+            <div className='mt-8 xl:max-w-[95%] w-[95%] mx-auto flex flex-wrap gap-3 justify-center items-center'>
+                <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md flex justify-center items-center bg-gray-800 ">
                     <Link to={'/bet9ja-betslips'}>
                         <div className="text-white">
                             <div className="text-center flex justify-center items-center flex-col gap-2 h-full">
@@ -25,7 +25,7 @@ export default function BetPage() {
                     </Link>
                 </div>
 
-                <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md sporty flex justify-center items-center bg-gray-800 ">
+                <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md sporty flex justify-center items-center bg-gray-800 ">
                     <Link to={'/sporty-betslips'}>
                         <div className=" text-white">
                             <div className="text-center flex justify-center items-center flex-col gap-2 h-full">
@@ -36,7 +36,7 @@ export default function BetPage() {
                     </Link>
                 </div>
 
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md betking flex justify-center items-center bg-gray-800 ">
+                    <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md betking flex justify-center items-center bg-gray-800 ">
                         <Link to={'/betking-betslips'}>
                             <div className=" text-white">
                                 <div className="text-center flex justify-center items-center flex-col gap-2 h-full">
@@ -47,7 +47,7 @@ export default function BetPage() {
                         </Link>
                     </div>
 
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md xbet flex justify-center items-center bg-gray-800 ">
+                    <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md xbet flex justify-center items-center bg-gray-800 ">
                         <Link to={'/xbet-betslips'}>
                             <div className=" text-white">
                                 <div className="text-center flex justify-center items-center flex-col gap-2 h-full">
@@ -58,7 +58,7 @@ export default function BetPage() {
                         </Link>
                     </div>
 
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md batano flex justify-center items-center bg-gray-800 ">
+                    <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md batano flex justify-center items-center bg-gray-800 ">
                         <Link to={'/batano-betslips'}>
                             <div className="text-white">
                                 {/* <img src="sporty.jpeg" alt="" className='rounded-md max-w-full'/> */}
@@ -70,7 +70,7 @@ export default function BetPage() {
                         </Link>
                     </div>
 
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md msport flex justify-center md:items-center items-center ">
+                    <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md msport flex justify-center md:items-center items-center ">
                         <Link to={'/msport-betslips'}>
                             <div className=" text-white">
                                 <div className="flex justify-center flex-col gap-2 items-center">
@@ -83,7 +83,7 @@ export default function BetPage() {
                         </Link>
                     </div>
 
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md pari flex justify-center items-end ">
+                    <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md pari flex justify-center items-end ">
                         <Link to={'/parimatch-betslips'}>
                             <div className="text-white">
                                 <div className="text-center flex justify-end items-center flex-col gap-2 h-full">
@@ -92,7 +92,7 @@ export default function BetPage() {
                             </div>
                         </Link>
                     </div>
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md Tbet flex justify-center items-end ">    
+                    <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md Tbet flex justify-center items-end ">    
                         <Link to={'/22bet-betslips'}>
                             <div className="text-white">
                                 {/* <img src="sporty.jpeg" alt="" className='rounded-md max-w-full'/> */}
