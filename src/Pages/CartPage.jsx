@@ -81,7 +81,7 @@ export default function CartPage() {
             </div>
             <div className="mt-7 flex justify-center gap-2 flex-wrap">
                 <div className="flex-1 relative bg-white md:p-4 p-2 rounded-md">
-                    <div className="w-[100%] overflow-x-scroll">
+                    <div className="max-w-[100%] overflow-x-scroll">
                         <table className='table rounded-md w-full'>
                             <thead className='bg-blue-300'>
                                 <tr>

@@ -56,24 +56,31 @@
     background: linear-gradient(to right, rgb(1, 1, 31) 50%, red 50%);
 }
 .xbet{
-    background-color: rgb(3, 3, 61);
+    background-image: url('/1xbet.png');
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(2, 2, 116);
 }
 .batano{
-    background-color: orangered;
-}
-.msport{
-    background-image: url('/msport.png');
-    background-size: cover;
+    background-image: url('/Logo.png');
+    background-color: rgb(238, 75, 43);
+    background-size: 40%;
     background-position: center;
     background-repeat: no-repeat;
 }
+.msport{
+    background: black;
+}
 .pari{
-    background-image: url('/pari.jpg');
+    background-image: url('/Parimatch_logo.png');
+    background-size: 40%;
     background-position: center;
-    
+    background-repeat: no-repeat;
+    background-color: rgb(252, 252, 6);
 }
 .Tbet{
-    background-image: url('/22bet.jpg');
+    background-image: url('/22betlogo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,3 +95,15 @@
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
+
+@media screen and (max-width: 600px){
+    .batano{
+        background-size: 80%;
+    }
+    .pari{
+        background-size: 80%;
+    }
+    .xbet{
+        background-size: 80%;
+    }
+}

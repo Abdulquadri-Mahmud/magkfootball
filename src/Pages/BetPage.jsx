@@ -70,10 +70,12 @@ export default function BetPage() {
                         </Link>
                     </div>
 
-                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md msport flex justify-center items-end ">
+                    <div className="md:w-[220px] w-[100%] md:h-[220px] h-[200px] rounded-md msport flex justify-center md:items-center items-center ">
                         <Link to={'/msport-betslips'}>
                             <div className=" text-white">
-                                {/* <img src="sporty.jpeg" alt="" className='rounded-md max-w-full'/> */}
+                                <div className="flex justify-center flex-col gap-2 items-center">
+                                    <h1 className='text-6xl  font-medium text-white'>MSp<span className="text-yellow-400">ort</span></h1>       
+                                </div>
                                 <div className="text-center flex justify-end items-center flex-col gap-2 h-full">
                                     <p className="font-medium pt-4">Click To See Available <br /> Betslip</p>
                                 </div>
@@ -85,7 +87,7 @@ export default function BetPage() {
                         <Link to={'/parimatch-betslips'}>
                             <div className="text-white">
                                 <div className="text-center flex justify-end items-center flex-col gap-2 h-full">
-                                    <p className="font-medium pt-4">Click To See Available <br /> Betslip</p>
+                                    <p className="font-medium pt-4 pb-3 text-black">Click To See Available Betslip</p>
                                 </div>
                             </div>
                         </Link>
