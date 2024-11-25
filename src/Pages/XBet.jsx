@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { FaRegCopy } from 'react-icons/fa6'
+import Show1Xbet from '../Components/display_betslip/Show1Xbet';
+
+export const betContext = createContext();
 
 export default function XBet() {
     const data = [
@@ -68,6 +71,29 @@ export default function XBet() {
         },
     ]
 
+    const [datas, setDatas] = useState([]);
+
+    useEffect(() => {
+        try {
+            const fetchUsers = async () => {
+                const url = `https://fake-api-one-rust.vercel.app/api/betslip/all_betslip`;
+        
+                const res = await fetch(url);
+        
+                const data = await res.json();
+        
+                if (data.success === false) {
+                  setError('Error while fetching data!');
+                }
+        
+                setDatas(data);
+
+            }; fetchUsers();
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
   return (
     <div className='py-10 bg-zinc-100'>
         <div className="2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
@@ -84,20 +110,17 @@ export default function XBet() {
             <div className="">
                 <h2 className="mb-4 mt-8 text-2xl font-medium">Todays Betslips</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
-                    {
-                        data.length > 0 && data.map((data) => {
-                            return (            
-                                <div key={data.id} className="relative shadow-md flex justify-center flex-wrap items-center py-5 px-3 bg-white rounded-md">
-                                    <p className="absolute top-2 left-2 text-gray-500 font-medium text-sm">{data.title}</p>
-                                    <h2 className="font-medium py-10 text-3xl cursor-pointer">{data.code}</h2>
-                                    <p className="absolute top-2 right-2 text-xl text-gray-500">{data.icon}</p>
-                                    <div className="">
-                                        <p className="text-sm text-gray-500 font-medium">{data.date}</p>
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
+                {
+                    datas.map((data) => (
+                        data.category === 'XBet' ? (
+                            <div key={data._id}>
+                                <betContext.Provider value={data}>
+                                    <Show1Xbet data={data}/>
+                                </betContext.Provider>
+                            </div>
+                        ) : 'No betslip availbal'
+                    ))
+                }
                 </div>
             </div>
         </div>

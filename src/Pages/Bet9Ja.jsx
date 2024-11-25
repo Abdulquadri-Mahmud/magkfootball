@@ -28,8 +28,6 @@ export default function Bet9Ja() {
             console.log(error);
         }
     }, []);
-
-    console.log(datas);
     
 
     const data = [
@@ -121,7 +119,7 @@ export default function Bet9Ja() {
                                         <ShowBet9ja data={data}/>
                                     </Bet9JaContext.Provider>
                                 </div>
-                            ) : ''
+                            ) : 'No betslip availbal'
                         ))
                     }
                 </div>

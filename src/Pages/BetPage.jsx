@@ -1,4 +1,3 @@
-import React from 'react'
 import { RiVipCrownFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import Header from '../Components/Header'

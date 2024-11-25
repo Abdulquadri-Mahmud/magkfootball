@@ -42,14 +42,14 @@ export default function Checkout_page() {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600">Email</label>
                   <input type="email" name="email" value={formData.email} onChange={handleChange} required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="johndoe@example.com"/>
                 </div>
                 <div className="md:col-span-2">
@@ -60,7 +60,7 @@ export default function Checkout_page() {
                     value={formData.address}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="123 Main St"
                   />
                 </div>
@@ -72,7 +72,7 @@ export default function Checkout_page() {
                     value={formData.city}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="New York"
                   />
                 </div>
@@ -84,11 +84,11 @@ export default function Checkout_page() {
                     value={formData.state}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="NY"
                   />
                 </div>
-                <div>
+                {/* <div>
                   <label className="block text-sm font-medium text-gray-600">ZIP</label>
                   <input
                     type="text"
@@ -96,13 +96,13 @@ export default function Checkout_page() {
                     value={formData.zip}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="10001"
                   />
-                </div>
+                </div> */}
               </div>
     
-              <h2 className="text-lg font-semibold text-gray-700">Payment Information</h2>
+              {/* <h2 className="text-lg font-semibold text-gray-700">Payment Information</h2>
               <div>
                 <label className="block text-sm font-medium text-gray-600">Name on Card</label>
                 <input
@@ -111,7 +111,7 @@ export default function Checkout_page() {
                   value={formData.cardName}
                   onChange={handleChange}
                   required
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                  className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                   placeholder="John Doe"
                 />
               </div>
@@ -123,11 +123,11 @@ export default function Checkout_page() {
                   value={formData.cardNumber}
                   onChange={handleChange}
                   required
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                  className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                   placeholder="1234 5678 9101 1121"
                 />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
+              </div> */}
+              {/* <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-600">Expiry Date</label>
                   <input
@@ -136,7 +136,7 @@ export default function Checkout_page() {
                     value={formData.expiry}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="MM/YY"
                   />
                 </div>
@@ -148,15 +148,15 @@ export default function Checkout_page() {
                     value={formData.cvv}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1"
+                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="123"
                   />
                 </div>
-              </div>
+              </div> */}
     
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white p-2 rounded shadow hover:bg-blue-700 transition"
+                className="w-full font-medium bg-blue-600  text-white p-2 rounded shadow hover:bg-blue-700 transition"
               >
                 Place Order
               </button>

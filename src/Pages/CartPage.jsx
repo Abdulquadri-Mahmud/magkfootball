@@ -13,6 +13,8 @@ export default function CartPage() {
     const { items } = useSelector((state) => state.cart);
     const [emptyCart, setEmptyCart] = useState(false);
 
+    const {currentUser} = useSelector((state) => state.user);
+
     let total = 0;
     
     let dispatch = useDispatch();
@@ -149,7 +151,9 @@ export default function CartPage() {
                     </div>
                         <p className='text-[12px] text-yellow-600 text-end py-2'>Excluding delivery charges</p>
                     <div>
-                        <button className='bg-blue-900 text-white w-full my-3 rounded-md py-2 font-medium'>Continue to Checkout</button>
+                        <Link to={`${currentUser ? '/checkout' : '/cart'}`}>
+                            <button className='bg-blue-900 text-white w-full my-3 rounded-md py-2 font-medium'>Continue to Checkout</button>
+                        </Link>
                     </div>
                 </div>
             </div>
