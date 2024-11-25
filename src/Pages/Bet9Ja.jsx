@@ -1,8 +1,37 @@
-import React from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { FaRegCopy } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+import ShowBet9ja from '../Components/display_betslip/ShowBet9ja';
+
+export const Bet9JaContext = createContext();
 
 export default function Bet9Ja() {
+    const [datas, setDatas] = useState([]);
+
+    useEffect(() => {
+        try {
+            const fetchUsers = async () => {
+                const url = `https://fake-api-one-rust.vercel.app/api/betslip/all_betslip`;
+        
+                const res = await fetch(url);
+        
+                const data = await res.json();
+        
+                if (data.success === false) {
+                  setError('Error while fetching data!');
+                }
+        
+                setDatas(data);
+
+            }; fetchUsers();
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
+    console.log(datas);
+    
+
     const data = [
         {
             id: 1,
@@ -85,18 +114,15 @@ export default function Bet9Ja() {
                 <h2 className="mb-4 mt-8 text-2xl font-medium">Todays Betslips</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
                     {
-                        data.length > 0 && data.map((data) => {
-                            return (            
-                                <div key={data.id} className="relative shadow-md flex justify-center flex-wrap items-center py-5 px-3 bg-white rounded-md">
-                                    <p className="absolute top-2 left-2 text-gray-500 font-medium text-sm">{data.title}</p>
-                                    <h2 className="font-medium py-10 text-3xl cursor-pointer">{data.code}</h2>
-                                    <p className="absolute top-2 right-2 text-xl text-gray-500">{data.icon}</p>
-                                    <div className="">
-                                        <p className="text-sm text-gray-500 font-medium">{data.date}</p>
-                                    </div>
+                        datas.map((data) => (
+                            data.category === 'Bet9ja' ? (
+                                <div key={data._id}>
+                                    <Bet9JaContext.Provider value={data}>
+                                        <ShowBet9ja data={data}/>
+                                    </Bet9JaContext.Provider>
                                 </div>
-                            )
-                        })
+                            ) : ''
+                        ))
                     }
                 </div>
             </div>

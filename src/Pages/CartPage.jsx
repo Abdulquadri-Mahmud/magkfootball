@@ -79,10 +79,10 @@ export default function CartPage() {
                     <Link to={'/gadgets'} fontWeight={500} className='text- flex items-center justify-center gap-2'><BiLeftArrowAlt/> Continue Shopping</Link>
                 </div>
             </div>
-            <div className="mt-7 flex justify-center gap-2 flex-wrap">
+            <div className="mt-7 md:flex block justify-center gap-2 flex-wrap">
                 <div className="flex-1 relative bg-white md:p-4 p-2 rounded-md">
-                    <div className="max-w-[100%] overflow-x-scroll">
-                        <table className='table rounded-md w-full'>
+                    <div className="max-w-[90vw] mx-auto overflow-auto">
+                        <table className='w-full'>
                             <thead className='bg-blue-300'>
                                 <tr>
                                     <th className='rounded-tl-md font-medium p-[10px] text-center'>Image</th>
