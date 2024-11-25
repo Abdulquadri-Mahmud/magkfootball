@@ -43,43 +43,43 @@ export default function AppRoutes() {
 
                 <Route path='/cart' element={<CartPage/>}/>
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/bookings' element={<BetPage/>}/>
+                </Route>
                 <Route element={<Private_Route/>}>
                   <Route path='/profile/:id' element={<Profile/>}/>
                 </Route>
 
                 {/* Bet Routes */}
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/bet9ja-betslips' element={<Bet9Ja/>}/>
-                <Route element={<Private_Route/>}>
                 </Route>
+                <Route element={<Private_Route/>}>
                   <Route path='/betking-betslips' element={<BetKing/>}/>
+                </Route>
 
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/xbet-betslips' element={<XBet/>}/>
+                </Route>
 
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/batano-betslips' element={<Betano/>}/>
+                </Route>
 
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/msport-betslips' element={<MSport/>}/>
+                </Route>
 
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/parimatch-betslips' element={<PariMatch/>}/>
+                </Route>
 
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/22bet-betslips' element={<Bet22/>}/>
+                </Route>
 
                 <Route element={<Private_Route/>}>
-                </Route>
                   <Route path='/sporty-betslips' element={<SportyBet/>}/>
+                </Route>
 
                 {/* User Routes */}
                 <Route path='/signin' element={<Sign_In/>}/>
