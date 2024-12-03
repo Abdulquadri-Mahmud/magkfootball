@@ -9,8 +9,38 @@
 }
 
 .hero{
-    background-image: linear-gradient();
+    background-image: url('/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgb(168, 165, 165);
 }
+.hero2{
+    background-image: url('/bg2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgb(168, 165, 165);
+}
+.hero3{
+    background-image: url('/bg4.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgb(168, 165, 165);
+}
+.hero4{
+    background-image: url('/bg3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgb(168, 165, 165);
+}
+
 @media (max-width: 420px), (max-height: 800px){
     .heros{
         height: 75vh;

@@ -23,7 +23,6 @@ export default function Header() {
     
   return (
     <div className=" bg-blue-900 shadow-md py-2 top-0 sticky z-20">
-
         <div className='xl:max-w-[90%] mx-auto text-white md:px-0 px-2 '>
             <div className='flex justify-between items-center'>
                 <div className="">

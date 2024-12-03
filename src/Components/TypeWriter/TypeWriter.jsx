@@ -12,7 +12,7 @@ export default function TypeWriter() {
     }
     return (
     <div className='App'>
-        <h1 className='text-white md:text-[3rem] text-[1.6rem] font-medium break-words md:leading-[4rem] sm:leading-[3rem] leading-[2rem]'>
+        <h1 className='text-white md:text-[3.5rem] text-[2rem] font-medium break-words md:leading-[4rem] sm:leading-[3rem] leading-[2rem]'>
             WELCOME TO{' '}
         <span>
             {/* Style will be inherited from the parent element */}
