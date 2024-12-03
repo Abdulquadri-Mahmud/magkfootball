@@ -30,6 +30,7 @@ import Order from '../Pages/Order/CreateOrder';
 import CreateOrder from '../Pages/Order/CreateOrder';
 import DeleteOrder from '../Pages/Order/DeleteOrder';
 import OrderList from '../Pages/Order/OrderList';
+import Readmore from '../Pages/Readmore';
 
 export default function AppRoutes() {
   return (
@@ -40,6 +41,7 @@ export default function AppRoutes() {
                 <Route exact element={<Home/>}/>
                 <Route exact path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
+                <Route path='/readmore/id' element={<Readmore/>}/>
 
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>

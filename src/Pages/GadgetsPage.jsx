@@ -28,7 +28,7 @@ export default function GadgetsPage() {
   }, []);
   
   return (
-    <div className='bg-zinc-100'>
+    <div className='bg-slate-200'>
       <div className=" py-10 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
           <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
             <div className="mb-3">
