@@ -38,12 +38,12 @@ export default function Gadget() {
   return (
     <div key={_id} className="shadow-md rounded-md relative">
         <Link to={`/product-details/${_id}`}>
-            <div className="flex justify-center pt-0 md:w-[200px] h-[150px] w-[140px] mx-auto">
+            <div className="flex justify-center pt-0 md:w-[180px] h-[150px] w-[100%] mx-auto">
                 <img src={image} className='max-w-full object-cover object-top' alt="" />
             </div>
         </Link>
         <button onClick={handleWishlistItem} className=" text-white cursor-pointer hover:text-blue-900 active:text-blue-900 focus:text-blue-900 absolute top-3 right-3 w-[30px] h-[30px] bg-blue-300 flex justify-center items-center rounded-full">
-            <IoHeart className='text-xl'/>
+            {/* <IoHeart className='text-xl'/> */}
         </button>
         <div className="p-3">
             <h2 className='py-1 font-medium md:text-center truncate'>{name}</h2>

@@ -18,7 +18,7 @@ export default function Settings() {
                 <Link to={`/profile/${currentUser._id}`} className='flex items-center gap-2 hover:text-blue-500 duration-200'><FaUser className='text-blue-500' />My Profile</Link>
                 <Link to={'/cart'} className=' flex items-center gap-2 hover:text-blue-500 duration-200'><FaCartShopping className='text-blue-500' />My Carts</Link>
                 {/* <Link to={''} className=' flex items-center gap-2 hover:text-blue-500 duration-200'><IoBagHandleSharp className='text-blue-500' />My Wishlists</Link> */}
-                <button className='text- w-full text-start flex items-center gap-2 hover:text-blue-500 duration-200'><TbLogout2 className='text-blue-500'/>Log Out</button>
+                {/* <button className='text- w-full text-start flex items-center gap-2 hover:text-blue-500 duration-200'><TbLogout2 className='text-blue-500'/>Log Out</button> */}
             </div>
         </div>
     </div>

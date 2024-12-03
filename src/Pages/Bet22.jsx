@@ -109,13 +109,13 @@ export default function Bet22() {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
                 {
                     datas.map((data) => (
-                        data.category === 'Bet22' ? (
+                        data.category === 'Bet22' && (
                             <div key={data._id}>
                                 <betContext.Provider value={data}>
                                     <Showbet22 data={data}/>
                                 </betContext.Provider>
                             </div>
-                        ) : 'No availble betslip '
+                        )
                     ))
                 }
                 </div>

@@ -131,27 +131,27 @@ export default function CartPage() {
                     </div>
                 </div>
                 <div className='md:max-w-[300px] w-[100%] mx-auto bg-white p-3 rounded-md'>
-                    <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300' justifyContent={'space-between'} alignItems={'center'} pb={3} borderBottomWidth={1} borderBottomColor={'gray.100'}>
+                    <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300'>
                         <h1 className='text-sm font-medium'>Order Summary</h1>
                         <p className='text-sm'>Subtotal ({items.length} Item)</p>
                     </div>
-                    <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300' justifyContent={'space-between'} alignItems={'center'} py={5} borderBottomWidth={1} borderBottomColor={'gray.100'}>
+                    <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300'>
                         <h1 className='text-sm font-medium'>Delivery Changes:</h1>
                         <p textAlign={'end'} className='text-[11px] text-gray-400'>Add your Delivery address at checkout to see delivery charges</p>
                     </div>
-                        <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300' justifyContent={'space-between'} alignItems={'center'} py={4} borderBottomWidth={1} borderBottomColor={'gray.100'}>
+                        <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300'>
                             <h1 className='text-sm font-medium'>Subtotal</h1>
                         <div>
                         <p className='flex items-center text-sm'><FaNairaSign/>{total.toLocaleString()}.00</p>
                     </div>
                     </div>
-                    <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300' justifyContent={'space-between'} alignItems={'center'} py={4} borderBottomWidth={1} borderBottomColor={'gray.100'}>
+                    <div className='flex justify-between items-center pb-3 bottom-2 border-gray-300'>
                         <h1 className='text-sm font-medium'>Total</h1>
                         <p className='flex items-center text-sm'><FaNairaSign/>{total.toLocaleString()}.00</p>
                     </div>
                         <p className='text-[12px] text-yellow-600 text-end py-2'>Excluding delivery charges</p>
                     <div>
-                        <Link to={`${currentUser ? '/checkout' : '/cart'}`}>
+                        <Link to={`${currentUser ? `/create-order` : '/cart'}`}>
                             <button className='bg-blue-900 text-white w-full my-3 rounded-md py-2 font-medium'>Continue to Checkout</button>
                         </Link>
                     </div>

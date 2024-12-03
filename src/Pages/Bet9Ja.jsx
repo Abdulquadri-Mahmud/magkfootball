@@ -1,9 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, Suspense, useEffect, useState } from 'react'
 import { FaRegCopy } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
-import ShowBet9ja from '../Components/display_betslip/ShowBet9ja';
 
 export const Bet9JaContext = createContext();
+const ShowBet9ja = React.lazy(() => import('../Components/display_betslip/ShowBet9ja'))
 
 export default function Bet9Ja() {
     const [datas, setDatas] = useState([]);
@@ -110,16 +110,18 @@ export default function Bet9Ja() {
             </div>
             <div className="">
                 <h2 className="mb-4 mt-8 text-2xl font-medium">Todays Betslips</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
                     {
                         datas.map((data) => (
-                            data.category === 'Bet9ja' ? (
+                            data.category === 'Bet9ja' && (
                                 <div key={data._id}>
-                                    <Bet9JaContext.Provider value={data}>
-                                        <ShowBet9ja data={data}/>
-                                    </Bet9JaContext.Provider>
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <Bet9JaContext.Provider value={data}>
+                                            <ShowBet9ja data={data}/>
+                                        </Bet9JaContext.Provider>
+                                    </Suspense>
                                 </div>
-                            ) : 'No betslip availbal'
+                            )
                         ))
                     }
                 </div>

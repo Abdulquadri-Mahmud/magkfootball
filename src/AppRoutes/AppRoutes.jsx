@@ -25,6 +25,11 @@ import SportyBet from '../Pages/SportyBet';
 import Bet9Ja from '../Pages/Bet9Ja';
 import CloudinaryUpload from '../Pages/Cloudinary';
 import Checkout_page from '../Pages/Checkout_page';
+import Checkout from '../Pages/Checkout';
+import Order from '../Pages/Order/CreateOrder';
+import CreateOrder from '../Pages/Order/CreateOrder';
+import DeleteOrder from '../Pages/Order/DeleteOrder';
+import OrderList from '../Pages/Order/OrderList';
 
 export default function AppRoutes() {
   return (
@@ -38,49 +43,27 @@ export default function AppRoutes() {
 
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
-                <Route path='/cloud' element={<CloudinaryUpload/>}/>
-                <Route path='/checkout' element={<Checkout_page/>}/>
+                {/* <Route path='/cloud' element={<CloudinaryUpload/>}/> */}
+                <Route path='/checkout/:id' element={<Checkout_page/>}/>
+                <Route path='/checkout' element={<Checkout/>}/>
+                <Route path='/create-order' element={<CreateOrder/>}/>
+                <Route path='/delete-order' element={<DeleteOrder/>}/>
+                <Route path='/order-list' element={<OrderList/>}/>
 
-                <Route path='/cart' element={<CartPage/>}/>
                 <Route element={<Private_Route/>}>
+                  <Route path='/cart' element={<CartPage/>}/>
                   <Route path='/bookings' element={<BetPage/>}/>
-                </Route>
-                <Route element={<Private_Route/>}>
                   <Route path='/profile/:id' element={<Profile/>}/>
-                </Route>
-
-                {/* Bet Routes */}
-                <Route element={<Private_Route/>}>
                   <Route path='/bet9ja-betslips' element={<Bet9Ja/>}/>
-                </Route>
-                <Route element={<Private_Route/>}>
                   <Route path='/betking-betslips' element={<BetKing/>}/>
-                </Route>
-
-                <Route element={<Private_Route/>}>
                   <Route path='/xbet-betslips' element={<XBet/>}/>
-                </Route>
-
-                <Route element={<Private_Route/>}>
                   <Route path='/batano-betslips' element={<Betano/>}/>
-                </Route>
-
-                <Route element={<Private_Route/>}>
                   <Route path='/msport-betslips' element={<MSport/>}/>
-                </Route>
-
-                <Route element={<Private_Route/>}>
                   <Route path='/parimatch-betslips' element={<PariMatch/>}/>
-                </Route>
-
-                <Route element={<Private_Route/>}>
                   <Route path='/22bet-betslips' element={<Bet22/>}/>
-                </Route>
-
-                <Route element={<Private_Route/>}>
                   <Route path='/sporty-betslips' element={<SportyBet/>}/>
                 </Route>
-
+                
                 {/* User Routes */}
                 <Route path='/signin' element={<Sign_In/>}/>
                 <Route path='/signup' element={<Sign_Up/>}/>

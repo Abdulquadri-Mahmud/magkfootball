@@ -4,72 +4,6 @@ import React, { createContext, useEffect, useState } from 'react'
 export const betContext = createContext();
 
 export default function MSport() {
-    const data = [
-        {
-            id: 1,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-        {
-            id: 2,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-        {
-            id: 3,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-        {
-            id: 4,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-        {
-            id: 5,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-        {
-            id: 6,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            title: '22 - Nov - 2024',
-        },
-        {
-            id: 7,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            title: '22 - Nov - 2024',
-        },
-        {
-            id: 8,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-        {
-            id: 9,
-            title: 'Betslips',
-            code: 'BHDGSFFJ',
-            icon: <FaRegCopy />,
-            date: '22 - Nov - 2024',
-        },
-    ]
-
     const [datas, setDatas] = useState([]);
 
     useEffect(() => {
@@ -111,13 +45,13 @@ export default function MSport() {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
                 {
                     datas.map((data) => (
-                        data.category === 'MSport' ? (
+                        data.category === 'MSport' && (
                             <div key={data._id}>
                                 <betContext.Provider value={data}>
                                     <ShowMsport data={data}/>
                                 </betContext.Provider>
                             </div>
-                        ) : 'No betslip available'
+                        )
                     ))
                 }
                 </div>

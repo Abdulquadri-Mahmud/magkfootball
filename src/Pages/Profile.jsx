@@ -105,6 +105,9 @@ export default function Profile() {
                 </button>
             </div>
         </form>
+        <div className="">
+            <button className="">Log out</button>
+        </div>
       </div>
     </div>
   )

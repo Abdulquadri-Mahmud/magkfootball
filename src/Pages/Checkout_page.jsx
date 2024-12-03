@@ -1,19 +1,26 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { updateFailure, updateStart, updateSuccess } from "../store/user/userReducer";
 
 export default function Checkout_page() {
+  const id = useParams();
+
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
         address: "",
         city: "",
         state: "",
-        zip: "",
-        cardName: "",
-        cardNumber: "",
-        expiry: "",
-        cvv: "",
       });
-    
+
+      const {currentUser} = useSelector((state) => state.user);
+
+      const name = `${currentUser.firstname} ${currentUser.lastname}`;
+      const address = currentUser.address;
+      const city = currentUser.city;
+      const state = currentUser.city;
+
       const handleChange = (e) => {
         setFormData({
           ...formData,
@@ -21,10 +28,33 @@ export default function Checkout_page() {
         });
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        alert("Checkout successful!");
-        console.log("Submitted Data:", formData);
+        try{
+          dispatch(updateStart());
+
+          const updateuser_api = `https://fake-api-one-rust.vercel.app/api/user/auth/update_user/${id}`;
+  
+          const res = await fetch(updateuser_api, {
+              method : 'PATCH',
+              headers : {'Content-Type' : 'application/json'},
+              body : JSON.stringify(formData),
+          });
+  
+          const data = await res.json();
+  
+          if (data.success === false) {
+              dispatch(updateFailure(data.message));
+              console.log(data.message);
+              
+              return;
+          }
+          
+          dispatch(updateSuccess(data));
+
+      } catch (error) {
+          dispatch(updateFailure(error));
+      }
       };
     
       return (
@@ -39,30 +69,30 @@ export default function Checkout_page() {
                   <input
                     type="text"
                     name="fullName"
-                    value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
+                    defaultValue={name}
+                    className="w-full p-2 border font-medium border-gray-300 rounded mt-1 outline-none"
                     placeholder="John Doe"
-                  />
+                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600">Email</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required
-                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
-                    placeholder="johndoe@example.com"/>
+                  <input type="email" name="email" onChange={handleChange} required defaultValue={currentUser.email}
+                    className="w-full p-2 border border-gray-300 rounded font-medium mt-1 outline-none"
+                    placeholder="johndoe@example.com" />
                 </div>
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-600">Address</label>
                   <input
                     type="text"
                     name="address"
-                    value={formData.address}
                     onChange={handleChange}
+                    defaultValue={currentUser.address}
                     required
-                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
+                    className="w-full p-2 border font-medium border-gray-300 rounded mt-1 outline-none"
                     placeholder="123 Main St"
-                  />
+                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600">City</label>
@@ -74,7 +104,7 @@ export default function Checkout_page() {
                     required
                     className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="New York"
-                  />
+                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600">State</label>
@@ -86,7 +116,7 @@ export default function Checkout_page() {
                     required
                     className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="NY"
-                  />
+                   />
                 </div>
                 {/* <div>
                   <label className="block text-sm font-medium text-gray-600">ZIP</label>
@@ -98,7 +128,7 @@ export default function Checkout_page() {
                     required
                     className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="10001"
-                  />
+                   />
                 </div> */}
               </div>
     
@@ -113,7 +143,7 @@ export default function Checkout_page() {
                   required
                   className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                   placeholder="John Doe"
-                />
+                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-600">Card Number</label>
@@ -125,7 +155,7 @@ export default function Checkout_page() {
                   required
                   className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                   placeholder="1234 5678 9101 1121"
-                />
+                 />
               </div> */}
               {/* <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -138,7 +168,7 @@ export default function Checkout_page() {
                     required
                     className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="MM/YY"
-                  />
+                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600">CVV</label>
@@ -150,7 +180,7 @@ export default function Checkout_page() {
                     required
                     className="w-full p-2 border border-gray-300 rounded mt-1 outline-none"
                     placeholder="123"
-                  />
+                   />
                 </div>
               </div> */}
     

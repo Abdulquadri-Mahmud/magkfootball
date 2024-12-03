@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 import TypeWriter from './TypeWriter/TypeWriter';
+import { Link } from 'react-router-dom';
 
 function SampleNextArrow(props) {
   
@@ -57,12 +58,12 @@ export default function Hero() {
           <TypeWriter/>
           {/* <h1 className='text-white md:text-[3rem] text-[1.6rem] font-medium break-words md:leading-[4rem] sm:leading-[3rem] leading-[2rem]'>WELCOME TO <br /> THE BEST SPORT UPDATES AND LIVE BETSLIPS</h1> */}
           <p className='text-white font-medium sm:mt-0 mt-3'>Click the Shop Now button below to start shopping </p>
-          <button className='px-4 py-2 bg-cyan-500 text-white font-medium uppercase rounded-md mt-2'>Shop Now</button>
+          <button className='px-4 py-2 bg-cyan-500 text-white font-medium uppercase rounded-md mt-2'><Link to={'/gadgets'}>Shop Now</Link></button>
         </div>
 
         {/* image slider */}
 
-        <div className="lg:w-[45%] md:w-[90%] w-full">
+        <div className="lg:w-[45%] md:w-[90%] w-full hidden lg:block">
           <Slider {...settings}>
 
             <div className="">

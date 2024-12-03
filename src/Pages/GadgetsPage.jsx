@@ -36,14 +36,14 @@ export default function GadgetsPage() {
             </div>
             <p className="text-sm text-gray-500 lg:max-w-[80%] mx-auto">Upgrade your tech game! Explore our top-quality gadgets at unbeatable prices—shop now for the latest in innovation and style!</p>
           </div>
-          <div className="mt-7 py-3 px-2 grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3">
+          <div className="mt-7 py-3 px-2 grid xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3">
             {
               product.length > 0 && product.map((product) => (
-                <productsContext.Provider value={product}>
-                  <Suspense fallback={<Loader/>}>
+                <Suspense fallback={<Loader/>}>
+                  <productsContext.Provider value={product}>
                     <AllProducts product={product}/>
-                  </Suspense>
-                </productsContext.Provider>
+                  </productsContext.Provider>
+                </Suspense>
               ))
             }
           </div>

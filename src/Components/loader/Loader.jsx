@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Loader() {
   return (
-      <div className="shadow-md rounded-md relative">
-        <div className="animate-pulseflex justify-center pt-0 md:w-[200px] h-[150px] w-[140px] mx-auto">
+      <div className="shadow-md rounded-md relative h-[300px] animate-pulse w-[300px]">
+        <div className="animate-pulseflex justify-center animate-pulse md:w-[200px] h-[150px] w-[140px] mx-auto">
         </div>
         <button className="animate-pulse text-white cursor-pointer absolute top-3 right-3 w-[30px] h-[30px] rounded-full">
             {/* <IoHeart className='text-xl'/> */}

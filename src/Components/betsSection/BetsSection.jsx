@@ -58,7 +58,7 @@ export default function BetsSection() {
                 </Link>
             </div>
 
-            <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md batano flex justify-center items-end bg-gray-800 ">
+            <div className="md:w-[300px] w-[100%] md:h-[250px] h-[200px] rounded-md batano flex justify-center items-end bg-white ">
                 <Link to={'/batano-betslips'}>
                     <div className="text-white">
                         {/* <img src="sporty.jpeg" alt="" className='rounded-md max-w-full'/> */}
@@ -76,7 +76,7 @@ export default function BetsSection() {
                         <h1 className='text-4xl  font-medium text-white'>MSp<span className="text-yellow-400">ort</span></h1>       
                     </div>
                     <div className="text-center flex justify-end items-center flex-col gap-2 h-full">
-                        <p className="font-medium pt-4">Click To See Available <br /> Betslip</p>
+                        <p className="font-medium pt-4 text-white">Click To See Available <br /> Betslip</p>
                     </div>
                 </Link>
             </div>
