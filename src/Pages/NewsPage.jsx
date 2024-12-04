@@ -44,8 +44,6 @@ export default function NewsPage() {
     prevArrow: <SamplePrevArrow />,
   };
 
-  const [expand, setExpand] = useState(true);
-
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -61,13 +59,6 @@ export default function NewsPage() {
     };
     fetchNews();
   }, []);
-
-  const adjustHeight = (textarea) => {
-    if (textarea) {
-      textarea.style.height = "auto"; // Reset height to recalculate
-      textarea.style.height = `${textarea.scrollHeight}px`; // Adjust height to content
-    }
-  };
 
   return (
     <div>
