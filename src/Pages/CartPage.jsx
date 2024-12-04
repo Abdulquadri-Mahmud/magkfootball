@@ -12,6 +12,7 @@ import { FaNairaSign } from 'react-icons/fa6';
 export default function CartPage() {
     const { items } = useSelector((state) => state.cart);
     const [emptyCart, setEmptyCart] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
 
     const {currentUser} = useSelector((state) => state.user);
 
@@ -64,6 +65,11 @@ export default function CartPage() {
             return;
         }
     });
+
+    const handleReidirect =  () => {
+        emptyCart ? setAlertMessage('You need to have at least a single item in your cart before you could checkout') : ''
+        setTimeout(() => setAlertMessage(""), 2000);
+    }
 
   return (
     <div className='bg-zinc-100'>
@@ -149,8 +155,16 @@ export default function CartPage() {
                         <h1 className='text-sm font-medium'>Total</h1>
                         <p className='flex items-center text-sm'><FaNairaSign/>{total.toLocaleString()}.00</p>
                     </div>
-                        <p className='text-[12px] text-yellow-600 text-end py-2'>Excluding delivery charges</p>
-                    <div>
+                    <p className='text-[12px] text-yellow-600 text-end py-2'>Excluding delivery charges</p>
+                    {
+                        alertMessage && (
+                            <div className="py-2 px-2 text-sm w-full rounded-md border border-red-300 bg-red-100">
+                                <p className="">{alertMessage}</p>
+                            </div>
+                        )
+                    }
+
+                    <div onClick={handleReidirect}>
                         <Link to={`${currentUser && !emptyCart ? `/create-order` : '/cart'}`}>
                             <button className='bg-blue-900 text-white w-full my-3 rounded-md py-2 font-medium'>Continue to Checkout</button>
                         </Link>

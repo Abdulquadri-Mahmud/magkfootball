@@ -46,11 +46,8 @@ export default function AppRoutes() {
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
                 {/* <Route path='/cloud' element={<CloudinaryUpload/>}/> */}
-                <Route path='/checkout/:id' element={<Checkout_page/>}/>
-                <Route path='/checkout' element={<Checkout/>}/>
-                <Route path='/create-order' element={<CreateOrder/>}/>
-                <Route path='/delete-order' element={<DeleteOrder/>}/>
-                <Route path='/order-list' element={<OrderList/>}/>
+                {/* <Route path='/checkout/:id' element={<Checkout_page/>}/>
+                <Route path='/checkout' element={<Checkout/>}/> */}
 
                 <Route element={<Private_Route/>}>
                   <Route path='/cart' element={<CartPage/>}/>
@@ -64,6 +61,9 @@ export default function AppRoutes() {
                   <Route path='/parimatch-betslips' element={<PariMatch/>}/>
                   <Route path='/22bet-betslips' element={<Bet22/>}/>
                   <Route path='/sporty-betslips' element={<SportyBet/>}/>
+                  <Route path='/create-order' element={<CreateOrder/>}/>
+                  <Route path='/delete-order' element={<DeleteOrder/>}/>
+                  <Route path='/order-list' element={<OrderList/>}/>
                 </Route>
                 
                 {/* User Routes */}
