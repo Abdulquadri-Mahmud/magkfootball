@@ -52,14 +52,18 @@ export default function Readmore() {
     <div className='bg-slate-200 py-10'>
       <div className="xl:max-w-[50%] md:max-w-[60%] max-w-[97%] mx-auto bg-white p-4 rounded-md">
         <div className="h-[300px] border rounded-md">
-          <img src={singleNews.source} alt="" />
+          <img src={singleNews.source} alt="" className='h-[300px] rounded-md'/>
+        </div>
+        <div className="border-t border-b border-gray-300 py-2 mt-3 flex justify-between items-center gap-2">
+          <p className="text-[12px] text-gray-500">Created by: admin</p>
+          <p className="text-[12px] text-gray-500">Date: {singleNews.date}</p>
         </div>
         <div className="py-4">
           <h2 className="font-medium text-xl">{singleNews.title}</h2>
-          {/* <p className="pb-2"
+          <p className="pb-2"
             dangerouslySetInnerHTML={{
               __html: singleNews.description.replace(/\n/g, "<br />"),
-            }}></p> */}
+            }}></p>
         </div>
       </div>
       {/*  */}
