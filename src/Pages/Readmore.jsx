@@ -15,7 +15,7 @@ export default function Readmore() {
         const res = await fetch(url);
         const data = await res.json();
 
-        if (!res.ok || data.success === false) {
+        if (data.success === false) {
           throw new Error("Error while fetching single news data!");
         }
 
