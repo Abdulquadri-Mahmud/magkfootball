@@ -27,7 +27,7 @@ export default function CreateOrder() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.id]: e.target.value,
+      [e.target.id]: e.target.defaultValue,
     });
   };
 
@@ -36,6 +36,8 @@ export default function CreateOrder() {
 
     const url = `https://fake-api-one-rust.vercel.app/api/order/create_orders`;
 
+    console.log(formData);
+    
     try {
       setLoading(true);
 
@@ -110,7 +112,7 @@ export default function CreateOrder() {
                     <p>First Name</p>
                     <input
                       onChange={handleChange}
-                      value={formData.firstname}
+                      defaultValue={formData.firstname}
                       type="text"
                       id="firstname"
                       className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
@@ -121,7 +123,7 @@ export default function CreateOrder() {
                     <p>Last Name</p>
                     <input
                       onChange={handleChange}
-                      value={formData.lastname}
+                      defaultValue={formData.lastname}
                       type="text"
                       id="lastname"
                       className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
@@ -135,7 +137,7 @@ export default function CreateOrder() {
                     <p>Phone Number</p>
                     <input
                       onChange={handleChange}
-                      value={formData.phone}
+                      defaultValue={formData.phone}
                       type="text"
                       id="phone"
                       className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
@@ -146,7 +148,7 @@ export default function CreateOrder() {
                     <p>Email Address</p>
                     <input
                       onChange={handleChange}
-                      value={formData.email}
+                      defaultValue={formData.email}
                       type="email"
                       id="email"
                       className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
@@ -160,7 +162,7 @@ export default function CreateOrder() {
                   <textarea
                     id="address"
                     onChange={handleChange}
-                    value={formData.address}
+                    defaultValue={formData.address}
                     className="outline-none w-full h-[80px] border border-gray-200 placeholder:text-sm font-normal text-sm rounded-md p-2"
                     placeholder="Full Address"
                   ></textarea>
@@ -193,23 +195,23 @@ export default function CreateOrder() {
 
                         return (
                           <tr className="px-2 border bg-slate-100" key={index}>
-                            <td className="pl-2 py-2 font-medium truncate">
+                            <td className="pl-2 py-2 font-normal truncate">
                               {item.productName.slice(0, 20)}...
                             </td>
-                            <td className="py-3 font-medium w-[20%]">
-                              <p className="pl-2 flex items-center">
-                                <FaNairaSign />
+                            <td className="py-3 font-normal w-[20%]">
+                              <p className="pl-2 flex items-center gap-1">
+                                <FaNairaSign className='text-sm'/>
                                 {item.productPrice.toLocaleString()}.00
                               </p>
                             </td>
-                            <td className="py-2 font-medium">
+                            <td className="py-2 font-normal">
                               <div className="pl-3 h-full gap-2">
                                 <span>{item.quantity}</span>
                               </div>
                             </td>
-                            <td className="py-3 font-medium w-[20%]">
+                            <td className="py-3 font-normal w-[20%]">
                               <p className="pl-2 flex items-center">
-                                <FaNairaSign />
+                                <FaNairaSign className='text-sm'/>
                                 {(item.productPrice * item.quantity).toLocaleString()}.00
                               </p>
                             </td>

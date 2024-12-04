@@ -4,8 +4,8 @@ import Header from '../Components/Header'
 
 export default function BetPage() {
     return (
-        <div className="">
-            <div className="my-10" id=''>
+        <div className="bg-slate-200">
+            <div className="py-16" id=''>
                 <div className="text-center">
                     <h1 className='font-medium md:text-4xl text-4xl pb-2'>BETSLIPS</h1>
                     <p className="text-sm text-gray-500">We have provided the best and the most accurate bestlip for you</p>
