@@ -34,8 +34,6 @@ export default function CreateOrder() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
-    
     const url = `https://fake-api-one-rust.vercel.app/api/order/create_orders`;
 
     try {
@@ -47,12 +45,12 @@ export default function CreateOrder() {
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) {
-        const errorDetails = await res.text();
-        setError(`Server Error: ${errorDetails}`);
-        toast.error(`Server Error: ${errorDetails}`);
-        return;
-      }
+      // if (!res.ok) {
+      //   const errorDetails = await res.text();
+      //   setError(`Server Error: ${errorDetails}`);
+      //   toast.error(`Server Error: ${errorDetails}`);
+      //   return;
+      // }
 
       const data = await res.json();
 
