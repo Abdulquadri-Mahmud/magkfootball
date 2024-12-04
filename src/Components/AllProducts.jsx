@@ -37,7 +37,7 @@ export default function AllProducts() {
   return (
     <div key={_id} className="shadow-md rounded-md relative bg-white">
         <Link to={`/product-details/${_id}`}>
-            <div className="flex justify-center pt-0 md:w-[200px] h-[150px] w-[140px] mx-auto">
+            <div className="flex justify-center pt-0 md:w-[180px] h-[150px] w-[100%] mx-auto">
                 <img src={image} className='max-w-full object-cover object-top' alt="" />
             </div>
         </Link>

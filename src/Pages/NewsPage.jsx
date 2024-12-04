@@ -51,6 +51,8 @@ export default function NewsPage() {
   };
 
   const [news, setNews] = useState([]);
+  console.log(news);
+  
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -92,11 +94,31 @@ export default function NewsPage() {
                 <p className="text-sm pt-3 text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ex nulla sequi voluptatem rem? Officia, tenetur. Nulla facere magni incidunt, veniam vel quisquam, eaque accusamus, rerum molestiae eos neque obcaecati? <br /> <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus mollitia soluta, odio, aut ut cupiditate quaerat, impedit aspernatur excepturi dicta quasi fugit harum obcaecati non praesentium. Commodi, error quasi? Nostrum.</p>
               </div>
 
+              <div className="">
+                {
+                  news.length > 0 && news.map((news) => {
+                    return (
+                      <div className="my-4">
+                        <div className="h-[300px] border rounded-md">
+                          <img src={news.image} alt="" />
+                        </div>
+                        <div className="border-t border-b border-gray-300 py-2 mt-3 flex justify-between items-center gap-2">
+                          <p className="text-[12px] text-gray-500">Created by: admin</p>
+                          <p className="text-[12px] text-gray-500">Date: {news.date}</p>
+                        </div>
+                        <div className="pt-3">
+                          <h2 className="font-medium text-xl">{news.title}</h2>
+                          <p className="pt-2">{news.description}</p>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+              </div>
             </div>
           </div>
 
-          <div className="md:w-[350px] w-full shadow-md p-2 rounded-md">
-
+          <div className="md:w-[350px] h-[350px] w-full shadow-md p-2 rounded-md">
             <div className="">
               <h2 className='font-medium text-xl border-l-4 border-l-blue-500 text-blue-500 pl-2'>Latest News</h2>
             </div>

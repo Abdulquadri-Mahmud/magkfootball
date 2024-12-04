@@ -151,7 +151,7 @@ export default function CartPage() {
                     </div>
                         <p className='text-[12px] text-yellow-600 text-end py-2'>Excluding delivery charges</p>
                     <div>
-                        <Link to={`${currentUser ? `/create-order` : '/cart'}`}>
+                        <Link to={`${currentUser && !emptyCart ? `/create-order` : '/cart'}`}>
                             <button className='bg-blue-900 text-white w-full my-3 rounded-md py-2 font-medium'>Continue to Checkout</button>
                         </Link>
                     </div>

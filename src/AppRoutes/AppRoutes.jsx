@@ -41,7 +41,7 @@ export default function AppRoutes() {
                 <Route exact element={<Home/>}/>
                 <Route exact path='/' element={<Home/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
-                <Route path='/readmore/id' element={<Readmore/>}/>
+                <Route path='/readmore/:id' element={<Readmore/>}/>
 
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
