@@ -34,6 +34,8 @@ export default function CreateOrder() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log(formData);
+    
     const url = `https://fake-api-one-rust.vercel.app/api/order/create_orders`;
 
     try {
@@ -113,7 +115,7 @@ export default function CreateOrder() {
                       value={formData.firstname}
                       type="text"
                       id="firstname"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-medium w-full rounded-md p-2"
+                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
                       placeholder="First Name"
                     />
                   </div>
@@ -124,7 +126,7 @@ export default function CreateOrder() {
                       value={formData.lastname}
                       type="text"
                       id="lastname"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-medium w-full rounded-md p-2"
+                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
                       placeholder="Last Name"
                     />
                   </div>
@@ -138,7 +140,7 @@ export default function CreateOrder() {
                       value={formData.phone}
                       type="text"
                       id="phone"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-medium w-full rounded-md p-2"
+                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
                       placeholder="Phone Number"
                     />
                   </div>
@@ -149,7 +151,7 @@ export default function CreateOrder() {
                       value={formData.email}
                       type="email"
                       id="email"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-medium w-full rounded-md p-2"
+                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
                       placeholder="Email Address"
                     />
                   </div>
@@ -161,7 +163,7 @@ export default function CreateOrder() {
                     id="address"
                     onChange={handleChange}
                     value={formData.address}
-                    className="outline-none w-full h-[80px] border border-gray-200 placeholder:text-sm font-medium rounded-md p-2"
+                    className="outline-none w-full h-[80px] border border-gray-200 placeholder:text-sm font-normal text-sm rounded-md p-2"
                     placeholder="Full Address"
                   ></textarea>
                 </div>
