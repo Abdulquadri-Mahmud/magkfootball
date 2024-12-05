@@ -43,7 +43,7 @@ export default function Home() {
         {/* <Section2/> */}
         <About_page/>
         <div className="mt-8">
-          <BetsSection/>
+          {/* <BetsSection/> */}
         </div>
         <div className="my-20 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
           <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
@@ -53,7 +53,7 @@ export default function Home() {
             <p className="text-sm text-gray-500">Upgrade your tech game! Explore our top-quality gadgets at unbeatable prices—shop now for the latest in innovation and style!</p>
           </div>
           <div className="mt-7 py-3 px-2 grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3">
-            {
+            {/* {
               product.length > 0 && product.map((product) => (
                 <productContext.Provider value={product}>
                   <Suspense fallback={<div className='text-black'>Loading...</div>}>
@@ -61,7 +61,7 @@ export default function Home() {
                   </Suspense>
                 </productContext.Provider>
               ))
-            }
+            } */}
           </div>
         </div>
         {/* <Section1/> */}
