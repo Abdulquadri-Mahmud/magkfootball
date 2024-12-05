@@ -6,37 +6,52 @@ import Section2 from '../Components/section2/Section2'
 import BetsSection from '../Components/betsSection/BetsSection'
 import { useSelector } from 'react-redux'
 import About_page from './About_page'
+import { BeatLoader } from "react-spinners";
 
 export const productContext = createContext();
-const Gadget = React.lazy(() => import('../Components/Gadget'));
+
+export const NewsComponentContext = createContext();
+const NewsComponent = React.lazy(() => import('../Components/NewsComponent'));
 
 export default function Home() {
-  const { currentAdmin } = useSelector((state) => state.admin);
-  // console.log(currentAdmin);
-
   const [error, setError] = useState(null);
-  const [product, setProducts] = useState({});
+  const [news, setNews] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3; // Number of items per page
 
   useEffect(() => {
     try {
       const fetchProduct = async () => {
-        const url = 'https://fake-api-one-rust.vercel.app/api/gadget/all_products';
+        const url = 'https://fake-api-one-rust.vercel.app/api/news/all_news';
   
         const res = await fetch(url);
   
         const data = await res.json();
 
-        setProducts(data);
+        setNews(data);
 
       }; fetchProduct();
 
     } catch (error) {
       setError(error)
     }
-
-
   }, []);
+
+  // Calculate the news to display on the current page
+  const indexOfLastNews = currentPage * itemsPerPage;
+  const indexOfFirstNews = indexOfLastNews - itemsPerPage;
+  const currentNews = news.slice(indexOfFirstNews, indexOfLastNews);
+
+  console.log(currentNews);
   
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(news.length / itemsPerPage);
+
+  // Handle page change
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className=''>
         <Hero/>
@@ -45,26 +60,80 @@ export default function Home() {
         <div className="mt-8">
           {/* <BetsSection/> */}
         </div>
-        {/* <div className="my-20 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
-          <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
-            <div className="mb-3">
-              <h1 className='relative font-medium md:text-4xl text-2xl gadget'>GADGETS</h1>
+      {/* News Grid with Suspense */}
+      <div className="my-20 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
+        {/* Brief Content Section */}
+        <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
+          <div className="mb-3">
+            <h1 className="relative font-medium md:text-4xl text-2xl gadget">News</h1>
+          </div>
+          <p className="text-sm text-gray-500">
+            Stay up-to-date with the latest news. Our curated stories bring you fresh insights, analysis, and more—explore now!
+          </p>
+        </div>
+
+        {/* News Grid with Suspense */}
+        <div className="mt-7 py-3 px-2 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {currentNews.length > 0 &&
+            currentNews.map((item) => (
+              <NewsComponentContext.Provider value={item} key={item._id}>
+                <Suspense
+                  fallback={
+                    <div className="flex justify-center items-center">
+                      <BeatLoader color="#1D4ED8" loading={true} size={15} />
+                    </div>
+                  }
+                >
+                  <NewsComponent news={item} />
+                </Suspense>
+              </NewsComponentContext.Provider>
+            ))}
+        </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-8">
+            <div className="flex gap-3 items-center">
+              {/* Previous Button */}
+              <button
+                onClick={() => paginate(currentPage - 1)}
+                disabled={currentPage === 1}
+                className={`${
+                  currentPage === 1 ? "bg-gray-300" : "bg-blue-600 hover:bg-blue-500"
+                } text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out`}
+              >
+                Prev
+              </button>
+
+              {/* Page Number Buttons */}
+              {Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index + 1}
+                  onClick={() => paginate(index + 1)}
+                  className={`${
+                    currentPage === index + 1
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-200 hover:bg-blue-100"
+                  } text-sm px-3 py-2 rounded-lg transition duration-300 ease-in-out`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+
+              {/* Next Button */}
+              <button
+                onClick={() => paginate(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className={`${
+                  currentPage === totalPages ? "bg-gray-300" : "bg-blue-600 hover:bg-blue-500"
+                } text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out`}
+              >
+                Next
+              </button>
             </div>
-            <p className="text-sm text-gray-500">Upgrade your tech game! Explore our top-quality gadgets at unbeatable prices—shop now for the latest in innovation and style!</p>
           </div>
-          <div className="mt-7 py-3 px-2 grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3">
-            {
-              product.length > 0 && product.map((product) => (
-                <productContext.Provider value={product}>
-                  <Suspense fallback={<div className='text-black'>Loading...</div>}>
-                    <Gadget product={product}/>
-                  </Suspense>
-                </productContext.Provider>
-              ))
-            }
-          </div>
-        </div> */}
-        {/* <Section1/> */}
+        )}
+      </div>
     </div>
   )
 }
