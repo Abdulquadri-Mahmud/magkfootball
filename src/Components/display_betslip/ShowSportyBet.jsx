@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { FaRegCopy } from 'react-icons/fa6';
+import { ShowSportyBetContext } from '../../Pages/SportyBet';
 
 export default function ShowSportyBet() {
-    const data = useContext(Bet9JaContext);
+    const data = useContext(ShowSportyBetContext);
     const [isTooltipVisible, setIsTooltipVisible] = useState(false); // State for tooltip visibility
   const [copyStatus, setCopyStatus] = useState(""); // State to track copy status
 

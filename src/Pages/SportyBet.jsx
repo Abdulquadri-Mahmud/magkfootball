@@ -1,7 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, Suspense, useEffect, useState } from 'react'
 import { FaRegCopy } from 'react-icons/fa6'
 
 export const ShowSportyBetContext = createContext();
+
+const ShowSportyBet = React.lazy(() => import('../Components/display_betslip/ShowSportyBet'))
 
 export default function SportyBet() {
     const [datas, setDatas] = useState([]);
@@ -48,9 +50,11 @@ export default function SportyBet() {
                     datas.map((data) => (
                         data.category === 'SportyBet' && (
                             <div key={data._id}>
-                                <ShowSportyBetContect.Provider value={data}>
-                                    <ShowSportyBetContext data={data}/>
-                                </ShowSportyBetContect.Provider>
+                                <Suspense fallback={<div>Loading...</div>}>
+                                    <ShowSportyBetContext.Provider value={data}>
+                                        <ShowSportyBet data={data}/>
+                                    </ShowSportyBetContext.Provider>
+                                </Suspense>
                             </div>
                         )
                     ))
