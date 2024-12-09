@@ -34,11 +34,11 @@ export default function Footer() {
                 <div className="mt-7 pl-3 flex flex-col gap-3 text-sm">
                     <div className="flex items-center gap-2">
                         <FaPhoneAlt />
-                        <Link to={'tel:07047594667'}>+2347047594667</Link>
+                        <Link to={'tel:+2349073754047'}>+234 907 375 4047</Link>
                     </div>
                     <div className="flex items-center gap-2">
                         <FaWhatsapp />
-                        <Link to={'tel:07047594667'}>+2347047594667</Link>
+                        <Link to={'tel:+2349073754047'}>+234 907 375 4047</Link>
                     </div>
                     <div className="flex items-center gap-2">
                         <MdOutlineAttachEmail />
