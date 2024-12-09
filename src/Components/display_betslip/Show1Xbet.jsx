@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { betContext } from '../../Pages/XBet';
+import { FaRegCopy } from 'react-icons/fa6';
 
 export default function Show1Xbet() {
     const data = useContext(betContext);

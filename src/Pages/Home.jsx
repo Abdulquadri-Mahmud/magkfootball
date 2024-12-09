@@ -1,10 +1,6 @@
 import React, { createContext, Suspense, useEffect, useState } from 'react'
 import Hero from '../Components/Hero'
-import Header from '../Components/Header'
-import Section1 from '../Components/sections/Section1'
-import Section2 from '../Components/section2/Section2'
-import BetsSection from '../Components/betsSection/BetsSection'
-import { useSelector } from 'react-redux'
+
 import About_page from './About_page'
 import { BeatLoader } from "react-spinners";
 
@@ -121,13 +117,9 @@ export default function Home() {
               ))}
 
               {/* Next Button */}
-              <button
-                onClick={() => paginate(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className={`${
+              <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages} className={`${
                   currentPage === totalPages ? "bg-gray-300" : "bg-blue-600 hover:bg-blue-500"
-                } text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out`}
-              >
+                } text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out`}>
                 Next
               </button>
             </div>
