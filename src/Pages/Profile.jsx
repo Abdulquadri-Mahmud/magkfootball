@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
-import { updateFailure, updateStart, updateSuccess } from '../store/user/userReducer';
+import { signOutUserFailure, signOutUserStart, signOutUserSuccess, updateFailure, updateStart, updateSuccess } from '../store/user/userReducer';
 import { FaPhone, FaRegAddressBook, FaRegUser } from 'react-icons/fa6';
 import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { TbPasswordUser } from 'react-icons/tb';
@@ -52,6 +52,16 @@ export default function Profile() {
       }
   }
 
+//   const handleLogout = async () => {
+//     try {
+//         dispatch(signOutUserSuccess());
+//         navigate('/signin');
+  
+//       } catch (error) {
+//         dispatch(signOutUserFailure(error.message));
+//       }
+//     };
+  
   return (
     <div className='py-10 bg-zinc-100'>
       <div className=" bg-white xl:w-[45%] md:w-[350px] w-[97%] mx-auto p-3 rounded-md shadow-lg">
@@ -105,9 +115,9 @@ export default function Profile() {
                 </button>
             </div>
         </form>
-        <div className="">
-            <button className="">Log out</button>
-        </div>
+        {/* <div className="mt-4">
+            <button onClick={handleLogout} className="bg-red-600 rounded-md text-white font-medium px-6 py-2">Log Out</button>
+        </div> */}
       </div>
     </div>
   )
