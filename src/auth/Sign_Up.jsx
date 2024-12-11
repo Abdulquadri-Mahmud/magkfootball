@@ -100,7 +100,7 @@ export default function Sign_Up() {
                 id="firstname"
                 type="text"
                 placeholder="First Name"
-                className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+                className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
                 aria-label="First Name"
               />
             </div>
@@ -113,7 +113,7 @@ export default function Sign_Up() {
                 id="lastname"
                 type="text"
                 placeholder="Last Name"
-                className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+                className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
                 aria-label="Last Name"
               />
             </div>
@@ -127,7 +127,7 @@ export default function Sign_Up() {
               id="username"
               type="text"
               placeholder="Username"
-              className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+              className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
               aria-label="Username"
             />
           </div>
@@ -140,7 +140,7 @@ export default function Sign_Up() {
               id="phone"
               type="number"
               placeholder="Mobile Number"
-              className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+              className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
               aria-label="Mobile Number"
             />
           </div>
@@ -153,7 +153,7 @@ export default function Sign_Up() {
               id="email"
               type="email"
               placeholder="Email Address"
-              className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+              className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
               aria-label="Email Address"
             />
           </div>
@@ -166,7 +166,7 @@ export default function Sign_Up() {
               id="password"
               type={showPassword ? 'text' : 'password'}
               placeholder="Password"
-              className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+              className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
               aria-label="Password"
             />
             <FaLock
@@ -183,7 +183,7 @@ export default function Sign_Up() {
               id="address"
               type="text"
               placeholder="Address"
-              className="px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium"
+              className="px-2 py-3 w-full rounded-md pl-8 border outline-none text-sm font-medium"
               aria-label="Address"
             />
           </div>
