@@ -3,7 +3,6 @@ import React, { useRef, useState } from 'react';
 import { MdOutlineShoppingCart, MdRemoveRedEye } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/Header';
 
 export default function ResetPassword() {
   const { token } = useParams();
@@ -85,16 +84,9 @@ export default function ResetPassword() {
 
   return (
     <div>
-      <Header />
       <div className="py-20 bg-gray-100">
         <div className="max-w-sm mx-auto py-5 px-3 bg-white rounded-md">
           <div className="flex flex-col items-center gap-1">
-            <div className="flex items-center justify-center gap-1 bg-pink-200 py-1 px-2 rounded-xl w-32">
-              <h1 className="font-medium uppercase text-sm font-revert">
-                Ade<span className="text-pink-600">X</span>ify <span className="text-black">Now</span>
-              </h1>
-              <MdOutlineShoppingCart className="text-pink-600 text-lg" />
-            </div>
             <h2 className="text-xl font-semibold text-center">Reset Password?</h2>
           </div>
           <p className="text-sm text-gray-400 text-center mt-2">Enter your new password</p>
@@ -109,7 +101,7 @@ export default function ResetPassword() {
                 type="password"
                 ref={password}
                 onChange={handleChange}
-                className="w-full py-2 px-3 bg-gray-200 rounded-md pl-8 text-sm outline-none"
+                className="w-full py-3 px-3 bg-gray-200 rounded-md pl-8 text-sm outline-none"
                 placeholder="Password"
               />
               <RiLockPasswordFill className="absolute top-3 left-3" />
@@ -127,7 +119,7 @@ export default function ResetPassword() {
                 type="password"
                 ref={confirmPassword}
                 onChange={handleChange}
-                className="w-full py-2 px-3 bg-gray-200 rounded-md pl-8 text-sm outline-none"
+                className="w-full py-3 px-3 bg-gray-200 rounded-md pl-8 text-sm outline-none"
                 placeholder="Confirm Password"
               />
               <RiLockPasswordFill className="absolute top-3 left-3" />
@@ -143,7 +135,7 @@ export default function ResetPassword() {
             <div className="mt-5">
               <button
                 type="submit"
-                className="w-full py-2 bg-pink-600 text-white text-lg rounded-md uppercase font-medium"
+                className="w-full py-2 bg-blue-900 text-white text-lg rounded-md uppercase font-medium"
               >
                 {loading ? (
                   <div className="flex items-center justify-center gap-2">
