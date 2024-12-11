@@ -17,7 +17,7 @@ export default function About_page() {
     <div className="my-10 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
       {/* About Us Header */}
       <div className="text-center mb-8" data-aos="fade-down">
-        <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-900">
+        <h1 className="text-4xl font-serif md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-400">
           About Us
         </h1>
         <p className="mt-3 text-gray-600 text-lg">
@@ -33,13 +33,13 @@ export default function About_page() {
         </div>
 
         {/* Context Section */}
-        <div className="context md:w-[40%] w-[100%]" data-aos="fade-up" data-aos-delay="200">
+        <div className="context md:w-[50%] w-[100%]" data-aos="fade-up" data-aos-delay="200">
           <div className="mt-4 text-start">
             <p className="leading-8 mt-2 text-gray-800">
-              <span className="font-bold text-purple-600">MAGKK FOOTBALL TALK</span> is your premier destination for in-depth football analysis, betting tips, and expertly curated betslips! Our mission is to empower you with reliable information, top-tier analysis, and strategies to make your sports betting experience both thrilling and rewarding. 
+              <span className="font-bold text-blue-600">MAGKK FOOTBALL TALK</span> is your premier destination for in-depth football analysis, betting tips, and expertly curated betslips! Our mission is to empower you with reliable information, top-tier analysis, and strategies to make your sports betting experience both thrilling and rewarding. 
             </p>
             <p className="leading-8 mt-4 text-gray-800">
-              We also sell clean, affordable, and durable phone and video gaming gadgets. Shop with us today and elevate your gaming experience to the next level!
+              We also sell clean, affordable, and durable video gaming gadgets. Shop with us today and elevate your gaming experience to the next level!
             </p>
           </div>
         </div>
