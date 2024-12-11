@@ -124,7 +124,7 @@ export default function ResetPassword() {
               />
               <RiLockPasswordFill className="absolute top-3 left-3" />
               <button
-                type="button"
+                type="button" id='password'
                 onClick={() => togglePasswordVisibility(confirmPassword, getLockPassIcon2)}
                 ref={getLockPassIcon2}
                 className="absolute top-3 right-3 outline-none border-none"
