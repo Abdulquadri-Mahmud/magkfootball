@@ -15,7 +15,7 @@ export default function About_page() {
                     {/* <p className="leading-6">
                         Muiz Ayolola also known as MAGkKFOOTBALL, begins is admiring of football analysis from childhood listening to Murphy Ijemba on brilla Fm 88.9, and also in school where we talk mostly about football any given time, I continue to pursue the dream even when I was in university making analysis for local team at OOU and now taking the central stage.
                     </p> */}
-                    <p className='leading-6 mt-2'>
+                    <p className='leading-8 mt-2'>
                         MAGKK FOOTBALL TALK is premier destination for sports insightsof in-depth football analysis, betting tips, and expertly curated betslips! Our mission is to empower you with reliable information, top-tier analysis, and strategies to make your sports betting experience both thrilling and rewarding. We also sell clean affordable durable phone and video gaming,  gadgets, shop with us today and take your gaming experience to top-tier.
                     </p>
                 </div>
