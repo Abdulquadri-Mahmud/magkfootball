@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ForgotPassword() {
   const [formData, setFormData] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading ] = useState(false);
+
+  let navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -26,7 +28,7 @@ export default function ForgotPassword() {
 
       setLoading(true);
 
-      const url = `https://fake-api-one-rust.vercel.app/api/user/forgot-password`;
+      const url = `https://fake-api-one-rust.vercel.app/api/user/auth/forgot-password`;
 
       const res = await fetch(url, {
         method: "POST",
@@ -46,6 +48,7 @@ export default function ForgotPassword() {
       setShowModal(true);
       setLoading(false);
       setError(false);
+      // navigate('/reset_password')
     } catch (error) {
       console.log(error);
       setError("An error occurred. Please try again later.");

@@ -20,7 +20,7 @@ export default function Footer() {
                     <h2 className='text-2xl'>About Us</h2>
                 </div>
                 <p className="pl-3 mt-7 text-sm">MAGKK FOOTBALL TALK is your premier destination for in-depth football analysis, betting tips, and expertly curated betslips! Our mission is to empower you with reliable information, top-tier analysis, and strategies to make your sports betting experience both thrilling and rewarding.</p>
-                <Link to={'/about'} className='text-sm pl-3 underline text-blue-500 font-medium'>See more</Link>
+                {/* <Link to={'/about'} className='text-sm pl-3 underline text-blue-500 font-medium'>See more</Link> */}
                 {/*  */}
             </div>
 

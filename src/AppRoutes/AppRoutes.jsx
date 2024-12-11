@@ -22,11 +22,7 @@ import MSport from '../Pages/MSport';
 import PariMatch from '../Pages/PariMatch';
 import Bet22 from '../Pages/Bet22';
 import SportyBet from '../Pages/SportyBet';
-import Bet9Ja from '../Pages/Bet9Ja';
-import CloudinaryUpload from '../Pages/Cloudinary';
-import Checkout_page from '../Pages/Checkout_page';
-import Checkout from '../Pages/Checkout';
-import Order from '../Pages/Order/CreateOrder';
+import Bet9Ja from '../Pages/Bet9Ja';;
 import CreateOrder from '../Pages/Order/CreateOrder';
 import DeleteOrder from '../Pages/Order/DeleteOrder';
 import OrderList from '../Pages/Order/OrderList';
@@ -45,10 +41,7 @@ export default function AppRoutes() {
 
                 <Route path='/gadgets' element={<GadgetsPage/>}/>
                 <Route path='/product-details/:id' element={<Details/>}/>
-                {/* <Route path='/cloud' element={<CloudinaryUpload/>}/> */}
-                {/* <Route path='/checkout/:id' element={<Checkout_page/>}/>
-                <Route path='/checkout' element={<Checkout/>}/> */}
-
+                
                 <Route element={<Private_Route/>}>
                   <Route path='/cart' element={<CartPage/>}/>
                   <Route path='/bookings' element={<BetPage/>}/>

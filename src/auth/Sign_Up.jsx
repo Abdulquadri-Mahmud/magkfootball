@@ -67,7 +67,7 @@ export default function Sign_Up() {
 
       const data = await res.json();
 
-      if (!data.success) {
+      if (data.success === false) {
         dispatch(signUpFailure(data.message));
         return;
       }
