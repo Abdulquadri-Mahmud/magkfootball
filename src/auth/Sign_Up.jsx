@@ -47,6 +47,10 @@ export default function Sign_Up() {
                 dispatch(signUpFailure('Email is Required!'));
                 return;
             }
+            if (address.current.value === '' || address.current.value === null) {
+                dispatch(signUpFailure('Address is Required!'));
+                return;
+            }
             if (password.current.value === '' || password.current.value === null) {
                 dispatch(signUpFailure('Password is Required!'));
                 return;
@@ -113,33 +117,33 @@ export default function Sign_Up() {
                 <div className="flex items-center justify-around md:gap-2 gap-0 flex-wrap w-full">
                     <div className="shadow-md rounded-md relative md:w-[48.5%] w-full">
                         <FaRegUser className='absolute left-2 top-4'/>
-                        <input onChange={handlChange} ref={firstname} id='firstname' type="text" placeholder='Firstname' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                        <input required onChange={handlChange} ref={firstname} id='firstname' type="text" placeholder='Firstname' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                     </div>
                     <div className=" my-3 shadow-md rounded-md relative md:w-[48.5%] w-full">
                         <FaRegUser className='absolute left-2 top-4'/>
-                        <input onChange={handlChange} ref={lastname} id='lastname' type="text" placeholder='Lastname' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                        <input required onChange={handlChange} ref={lastname} id='lastname' type="text" placeholder='Lastname' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                     </div>
                 </div>
                 <div className="shadow-md rounded-md relative">
                     <FaRegUser className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={username} id='username' type="text" placeholder='Username' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    <input required onChange={handlChange} ref={username} id='username' type="text" placeholder='Username' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 <div className="my-3 shadow-md rounded-md relative">
                     <FaPhone className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={phone} id='phone' type="number" placeholder='Mobile' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    <input required onChange={handlChange} ref={phone} id='phone' type="number" placeholder='Mobile' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 <div className="shadow-md rounded-md relative">
                     <MdOutlineMarkEmailUnread className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={email} id='email' type="email" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    <input required onChange={handlChange} ref={email} id='email' type="email" placeholder='Example@gmail.com' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 <div className="mt-3 shadow-md rounded-md relative">
                     <TbPasswordUser className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    <input required onChange={handlChange} ref={password} id='password' type="password" placeholder='Password goes here' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                     <FaLock onClick={handlePassword} ref={getLockPassIcon} className='absolute right-2 top-4'/>
                 </div>
                 <div className="mt-3 shadow-md rounded-md relative">
                     <FaRegAddressBook className='absolute left-2 top-4'/>
-                    <input onChange={handlChange} ref={address} id='address' type="text" placeholder='Address...' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
+                    <input required onChange={handlChange} ref={address} id='address' type="text" placeholder='Address...' className='px-2 py-3 w-full rounded-md pl-8 border-none outline-none text-sm font-medium bord'/>
                 </div>
                 {
                     error && (
