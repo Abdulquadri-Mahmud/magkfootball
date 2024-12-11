@@ -39,9 +39,6 @@ export default function Home() {
   const indexOfFirstNews = indexOfLastNews - itemsPerPage;
   const currentNews = news.slice(indexOfFirstNews, indexOfLastNews);
 
-  console.log(currentNews);
-  
-
   // Calculate the total number of pages
   const totalPages = Math.ceil(news.length / itemsPerPage);
 

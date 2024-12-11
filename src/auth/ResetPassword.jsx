@@ -23,6 +23,9 @@ export default function ResetPassword() {
     });
   };
 
+  console.log(formData);
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -102,7 +105,6 @@ export default function ResetPassword() {
               <input
                 type="password"
                 ref={password}
-                onChange={handleChange}
                 className="w-full py-3 px-3 bg-gray-200 rounded-md pl-8 text-sm outline-none"
                 placeholder="Password"
               />
@@ -120,13 +122,13 @@ export default function ResetPassword() {
               <input
                 type="password"
                 ref={confirmPassword}
-                onChange={handleChange}
+                onChange={handleChange} id='password'
                 className="w-full py-3 px-3 bg-gray-200 rounded-md pl-8 text-sm outline-none"
                 placeholder="Confirm Password"
               />
               <RiLockPasswordFill className="absolute top-3 left-3" />
               <button
-                type="button" id='password'
+                type="button"
                 onClick={() => togglePasswordVisibility(confirmPassword, getLockPassIcon2)}
                 ref={getLockPassIcon2}
                 className="absolute top-3 right-3 outline-none border-none"
