@@ -19,7 +19,7 @@ export default function Footer() {
                     </div>
                     <h2 className='text-2xl'>About Us</h2>
                 </div>
-                <p className="pl-3 mt-7 text-sm">Muiz Ayolola also known as MAGkKFOOTBALL, begins is admiring of football analysis from childhood listening to Murphy Ijemba on brilla Fm 88.9, and also in school where we talk mostly about football any given time, I continue to pursue the dream even when I was in university making analysis for local team at OOU and now taking the central stage.</p>
+                <p className="pl-3 mt-7 text-sm">MAGKK FOOTBALL TALK is your premier destination for in-depth football analysis, betting tips, and expertly curated betslips! Our mission is to empower you with reliable information, top-tier analysis, and strategies to make your sports betting experience both thrilling and rewarding.</p>
                 <Link to={'/about'} className='text-sm pl-3 underline text-blue-500 font-medium'>See more</Link>
                 {/*  */}
             </div>
