@@ -63,7 +63,7 @@ export default function AppRoutes() {
                 <Route path='/signin' element={<Sign_In/>}/>
                 <Route path='/signup' element={<Sign_Up/>}/>
                 <Route path='/forgot_password' element={<ForgotPassword/>}/>
-                <Route path='/reset_password' element={<ResetPassword/>}/>
+                <Route path='/reset_password/:token' element={<ResetPassword/>}/>
                 
                 {/* 404 page */}
                 <Route path='*' element={<PageNotFound/>}/>
