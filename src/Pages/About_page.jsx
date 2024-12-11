@@ -17,7 +17,7 @@ export default function About_page() {
     <div className="my-10 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
       {/* About Us Header */}
       <div className="text-center mb-8" data-aos="fade-down">
-        <h1 className="text-4xl font-serif md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-400">
+        <h1 className="text-4xl font-serif md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-950">
           About Us
         </h1>
         <p className="mt-3 text-gray-600 text-lg">
@@ -26,7 +26,7 @@ export default function About_page() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-wrap items-center justify-center gap-5 px-2">
+      <div className="flex flex-wrap justify-center gap-5 px-2">
         {/* Video Section */}
         <div className="video flex-1" data-aos="fade-up">
           <video loop muted controls autoPlay src="/aboutus.mp4" className="border-slate-100 border-4 rounded-md w-full"/>
