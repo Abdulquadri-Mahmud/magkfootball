@@ -51,7 +51,7 @@ export default function ResetPassword() {
         return;
       }
 
-      const endpoint = `https://adexify-api.vercel.app/api/admin/auth/reset-password/${token}`;
+      const endpoint = `https://fake-api-one-rust.vercel.app/api/user/auth/reset-password/${token}`;
 
       const res = await fetch(endpoint, {
         method: 'POST',
