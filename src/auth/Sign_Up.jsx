@@ -4,7 +4,7 @@ import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { TbPasswordUser } from 'react-icons/tb';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { signUpFailure, signUpStart } from '../store/user/userReducer';
+import { signUpFailure, signUpStart, signUpSuccess } from '../store/user/userReducer';
 
 export default function Sign_Up() {
   const [formData, setFormData] = useState({});
@@ -73,6 +73,7 @@ export default function Sign_Up() {
       }
 
       navigate('/signin');
+      dispatch(signUpSuccess());
     } catch (error) {
       dispatch(signUpFailure(error.message));
     }
