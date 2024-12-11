@@ -42,7 +42,7 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-2">
                         <MdOutlineAttachEmail />
-                        <Link to={'mailto:abdulquadrimahmud06%gmail.com'}>abdulquadrimahmud06%gmail.com</Link>
+                        <Link to={'mailto:oloyorichieog@gmail.com'}>mailto:oloyorichieog@gmail.com</Link>
                     </div>
                 </div>
             </div>
