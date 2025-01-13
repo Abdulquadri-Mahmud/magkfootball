@@ -58,9 +58,7 @@ export default function ResetPassword() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      console.log(formData);
       
-
       const data = await res.json();
 
       if (data.success === false) {

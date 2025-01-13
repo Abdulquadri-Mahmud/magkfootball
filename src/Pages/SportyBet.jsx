@@ -23,7 +23,7 @@ export default function Bet9Ja() {
         }
 
         // Filter items where category === 'Bet9ja'
-        const filtered = data.filter((item) => item.category === 'Sporty Bet');
+        const filtered = data.filter((item) => item.category === 'SportyBet');
         setDatas(data); // Full data
         setFilteredDatas(filtered); // Filtered 'Bet9ja' items
         console.log(filtered);
