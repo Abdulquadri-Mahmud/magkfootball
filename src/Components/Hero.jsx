@@ -53,7 +53,7 @@ export default function Hero() {
   return (
     <div className="">
       <Slider {...settings}>
-        <div className='overflow-hidden md:px-0 px-6 lg:h-[80vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero flex justify-center items-center md:pt-[14rem] pt-[10rem] heros'>
+        <div className='overflow-hidden md:px-0 px-6 lg:h-[80vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero flex justify-center items-center md:pt-[14rem] pt-[10rem] newshero'>
           <div className="xl:max-w-[70%] mx-auto flex flex-wrap lg:flex-row flex-col-reverse justify-around items-center w-full">
             <div className="flex-1 lg:text- text-center w-full">
               <TypeWriter/>
@@ -62,25 +62,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className='overflow-hidden md:px-0 px-6 lg:h-[80vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero2 flex justify-center items-center md:pt-[14rem] pt-[10rem] heros'>
-          <div className="xl:max-w-[70%] mx-auto flex flex-wrap lg:flex-row flex-col-reverse justify-around items-center w-full">
-            <div className="flex-1 lg:text- text-center w-full">
-              <TypeWriter/>
-              <p className='text-white font-medium sm:mt-0 mt-3'>Click the Shop Now button below to start shopping </p>
-              <button className='px-4 py-2 bg-blue-900 text-white font-medium uppercase rounded-md mt-2'><Link to={'/gadgets'}>Shop Now</Link></button>
-            </div>
-          </div>
-        </div>
-        <div className='overflow-hidden md:px-0 px-6 lg:h-[80vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero3 flex justify-center items-center md:pt-[14rem] pt-[10rem] heros'>
-          <div className="xl:max-w-[70%] mx-auto flex flex-wrap lg:flex-row flex-col-reverse justify-around items-center w-full">
-            <div className="flex-1 lg:text- text-center w-full">
-              <TypeWriter/>
-              <p className='text-white font-medium sm:mt-0 mt-3'>Click the Shop Now button below to start shopping </p>
-              <button className='px-4 py-2 bg-blue-900 text-white font-medium uppercase rounded-md mt-2'><Link to={'/gadgets'}>Shop Now</Link></button>
-            </div>
-          </div>
-        </div>
-        <div className='overflow-hidden md:px-0 px-6 lg:h-[80vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero4 flex justify-center items-center md:pt-[14rem] pt-[10rem] heros'>
+        <div className='overflow-hidden md:px-0 px-6 lg:h-[80vh] md:h-70vh] sm:h-[60vh] h-[85vh] hero flex justify-center items-center md:pt-[14rem] pt-[10rem] newshero2'>
           <div className="xl:max-w-[70%] mx-auto flex flex-wrap lg:flex-row flex-col-reverse justify-around items-center w-full">
             <div className="flex-1 lg:text- text-center w-full">
               <TypeWriter/>

@@ -32,23 +32,15 @@ export default function Gadget() {
   };
 
   return (
-    <div
-      key={_id}
-      className="shadow-lg rounded-lg bg-white overflow-hidden transform transition-transform duration-300 hover:scale-105"
-    >
+    <div key={_id}
+      className="shadow-lg rounded-lg bg-white overflow-hidden transform transition-transform duration-300 hover:scale-105">
       <Link to={`/product-details/${_id}`} className="block relative">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-[180px] object-cover"
-        />
-        <button
-          onClick={(e) => {
+        <img src={image} alt={name} className="w-full h-[180px] object-cover"/>
+        <button onClick={(e) => {
             e.preventDefault();
             handleWishlistItem();
           }}
-          className="absolute top-3 right-3 w-8 h-8 bg-white text-red-500 flex justify-center items-center rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300"
-        >
+          className="absolute top-3 right-3 w-8 h-8 bg-white text-red-500 flex justify-center items-center rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300">
           <IoHeart className="text-xl" />
         </button>
       </Link>
@@ -66,10 +58,7 @@ export default function Gadget() {
           </p>
         </div>
 
-        <button
-          onClick={handleCart}
-          className="w-full bg-blue-600 text-white py-2 rounded-md flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors duration-300"
-        >
+        <button onClick={handleCart} className="w-full bg-blue-600 text-white py-2 rounded-md flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors duration-300">
           <FaCartShopping /> Add to Cart
         </button>
       </div>

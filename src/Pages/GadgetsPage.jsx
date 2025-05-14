@@ -56,7 +56,7 @@ export default function GadgetsPage() {
             currentProducts.map((product) => (
               <Suspense fallback={<Loader />} key={product.id}>
                 <productsContext.Provider value={product}>
-                  <AllProducts product={product} />
+                  <AllProdloaderucts product={product} />
                 </productsContext.Provider>
               </Suspense>
             ))

@@ -7,35 +7,19 @@
     width: 250px;
     padding: 10px;
 }
-
-.hero{
-    background-image: url('/bg.jpg');
+.newshero{
+    background-image: url('/newshero.jpg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     background-blend-mode: multiply;
     background-color: rgb(168, 165, 165);
 }
-.hero2{
-    background-image: url('/bg2.jpg');
+
+.newshero2{
+    background-image: url('/hero.jpeg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-color: rgb(168, 165, 165);
-}
-.hero3{
-    background-image: url('/bg4.jpg');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-color: rgb(168, 165, 165);
-}
-.hero4{
-    background-image: url('/bg3.jpg');
-    background-repeat: no-repeat;
-    background-position: top;
     background-size: cover;
     background-blend-mode: multiply;
     background-color: rgb(168, 165, 165);

@@ -17,10 +17,9 @@ export default function NewsComponent() {
   }, []);
 
   return (
-    <div key={data._id} className="bg-white shadow-lg rounded-lg p-4 transition-transform duration-300 ease-in-out transform hover:scale-105"
-        data-aos="fade-up">
+    <div key={data._id} className="bg-white shadow-lg border border-gray-200 rounded-lg p-4 transition-transform duration-300 ease-in-out transform hover:scale-105">
         <div className="relative h-[200px] mb-4">
-            <img src={data.source} alt={data.title}
+            <img src={data?.source} alt={data?.title}
                 className="w-full h-full object-cover rounded-md" />
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30 rounded-md"></div>
         </div>

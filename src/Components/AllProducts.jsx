@@ -27,13 +27,14 @@ export default function AllProducts() {
     };
   
     const handleCart = () => {
-        dispatch(addToCart(getCarts))
+      dispatch(addToCart(getCarts));
     }
 
     const handleWishlistItem = () => {
       dispatch(addWishlist(getCarts));
       setAlert("Your item has been saved.");
     }
+    
   return (
     <div key={_id} className="shadow-md rounded-md relative bg-white">
         <Link to={`/product-details/${_id}`}>
