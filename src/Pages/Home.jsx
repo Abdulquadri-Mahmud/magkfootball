@@ -139,7 +139,7 @@ const ExpertAnalysis = () => {
   ];
 
   return (
-    <div className="bg-gray-100 rounded-xl p-6 my-6">
+    <div className="bg-gray-100 max-w-6xl mx-auto rounded-xl p-6 my-6">
       <h2 className="text-2xl font-bold mb-6">Expert Analysis</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {articles.map((article, i) => (
