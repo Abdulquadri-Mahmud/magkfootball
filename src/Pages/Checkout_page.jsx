@@ -66,15 +66,7 @@ export default function Checkout_page() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-600">Full Name</label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    onChange={handleChange}
-                    required
-                    defaultValue={name}
-                    className="w-full p-2 border font-medium border-gray-300 rounded mt-1 outline-none"
-                    placeholder="John Doe"
-                   />
+                  <input type="text" name="fullName" onChange={handleChange} required defaultValue={name} className="w-full p-2 border font-medium border-gray-300 rounded mt-1 outline-none" placeholder="John Doe"/>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600">Email</label>

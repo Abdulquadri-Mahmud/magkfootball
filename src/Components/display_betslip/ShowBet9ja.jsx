@@ -25,7 +25,7 @@ export default function ShowBet9ja() {
       <p className="absolute top-2 left-2 text-gray-500 font-medium text-sm">Betslip</p>
 
       <h2 className="font-medium py-10 text-3xl cursor-pointer break-words">
-        {data.betslipCode}
+        {data?.betslipCode}
       </h2>
 
       {/* Tooltip for the copy icon */}

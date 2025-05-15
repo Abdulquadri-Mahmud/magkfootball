@@ -65,70 +65,72 @@ export default function SignIn() {
     };
 
     return (
-        <div className="md:py-20 py-12">
-            <div className="relative bg-white md:w-[350px] w-[97%] mx-auto p-3 rounded-md shadow-lg">
-                <div>
-                    <h2 className="text-3xl font-medium text-center">Welcome Back</h2>
-                    <p className="text-center text-gray-400 text-sm pt-2">
-                        We provide accurate, real-time sports news
-                    </p>
-                </div>
-                <form onSubmit={handleSubmit} className="mt-5">
-                    <div className="shadow-md rounded-md relative">
-                        <MdOutlineMarkEmailUnread className="absolute left-2 top-4" />
-                        <input
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            id="email"
-                            type="email"
-                            placeholder="Example@gmail.com"
-                            className="px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none"
-                        />
+    <div className='bg-slate-200'>
+            <div className="md:py-20 py-12">
+                <div className="relative bg-white max-w-md md:mx-auto border border-gray-200 p-3 mx-3 md:p-6 rounded-md shadow-xl">
+                    <div>
+                        <h2 className="text-3xl font-medium text-center">Welcome Back</h2>
+                        <p className="text-center text-gray-400 text-sm pt-2">
+                            We provide accurate, real-time sports news
+                        </p>
                     </div>
-                    <div className="mt-5 shadow-md rounded-md relative">
-                        <TbPasswordUser className="absolute left-2 top-4" />
-                        <input
-                            required
-                            value={formData.password}
-                            onChange={handleChange}
-                            id="password"
-                            type={showPassword ? 'text' : 'password'}
-                            placeholder="Password goes here"
-                            className="px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none"
-                        />
-                        <FaLock
-                            onClick={handlePasswordToggle}
-                            className="absolute right-2 top-4 cursor-pointer"
-                        />
-                    </div>
-                    {/* {formError && (
-                        <div className="mt-3 w-full rounded-md">
-                            <p className="text-red-500 text-sm font-medium">{formError}</p>
+                    <form onSubmit={handleSubmit} className="mt-5">
+                        <div className="shadow-md rounded-md relative">
+                            <MdOutlineMarkEmailUnread className="absolute left-2 top-4" />
+                            <input
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                                id="email"
+                                type="email"
+                                placeholder="Example@gmail.com"
+                                className="px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none"
+                            />
                         </div>
-                    )} */}
-                    {error && (
-                        <div className="mt-3 w-full rounded-md">
-                            <p className="text-red-500 text-sm font-medium">{error}</p>
+                        <div className="mt-5 shadow-md rounded-md relative">
+                            <TbPasswordUser className="absolute left-2 top-4" />
+                            <input
+                                required
+                                value={formData.password}
+                                onChange={handleChange}
+                                id="password"
+                                type={showPassword ? 'text' : 'password'}
+                                placeholder="Password goes here"
+                                className="px-2 h-[45px] w-full rounded-md pl-8 text-sm font-medium border-none outline-none"
+                            />
+                            <FaLock
+                                onClick={handlePasswordToggle}
+                                className="absolute right-2 top-4 cursor-pointer"
+                            />
                         </div>
-                    )}
-                    <div className="mt-5 text-end text-blue-500 font-medium text-sm underline animate-bounce">
-                        <Link to={'/forgot_password'}>Forgot Password</Link>
+                        {/* {formError && (
+                            <div className="mt-3 w-full rounded-md">
+                                <p className="text-red-500 text-sm font-medium">{formError}</p>
+                            </div>
+                        )} */}
+                        {error && (
+                            <div className="mt-3 w-full rounded-md">
+                                <p className="text-red-500 text-sm font-medium">{error}</p>
+                            </div>
+                        )}
+                        <div className="mt-5 text-end text-blue-500 font-medium text-sm underline animate-bounce">
+                            <Link to={'/forgot_password'}>Forgot Password</Link>
+                        </div>
+                        <div className="w-full mt-6">
+                            <button
+                                type="submit"
+                                className="bg-blue-900 w-full py-2 rounded-md text-white font-medium text-xl"
+                            >
+                                {loading ? 'Loading...' : 'Log In'}
+                            </button>
+                        </div>
+                    </form>
+                    <div className="pt-6 text-sm flex gap-2 items-center font-medium">
+                        <p>You do not have an account?</p>
+                        <Link to={'/signup'} className="text-blue-500 underline">
+                            Sign Up
+                        </Link>
                     </div>
-                    <div className="w-full mt-6">
-                        <button
-                            type="submit"
-                            className="bg-blue-900 w-full py-2 rounded-md text-white font-medium text-xl"
-                        >
-                            {loading ? 'Loading...' : 'Log In'}
-                        </button>
-                    </div>
-                </form>
-                <div className="pt-6 text-sm flex gap-2 items-center font-medium">
-                    <p>You do not have an account?</p>
-                    <Link to={'/signup'} className="text-blue-500 underline">
-                        Sign Up
-                    </Link>
                 </div>
             </div>
         </div>

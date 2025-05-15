@@ -1,34 +1,97 @@
-import React, { useEffect, Suspense, createContext, useState } from 'react';
+import React, { useEffect, Suspense, useState, createContext } from 'react';
 import Loader from '../Components/loader/Loader';
 
 export const productsContext = createContext();
+
+const GadgetHero = () => {
+  return (
+    <section className="bg-blue-900 text-white py-16 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* Text Content */}
+        <div className="md:w-1/2 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Level Up Your Tech with MAGKK Gadgets
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-6">
+            Explore clean, affordable, and durable gadgets—from gaming accessories to mobile tech. Shop smart. Game smarter.
+          </p>
+          <a
+            href="#store"
+            className="inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
+          >
+            Shop Now
+          </a>
+        </div>
+
+        {/* Image / Visual */}
+        <div className="md:w-1/2">
+          <img
+            src="/gadget.png"
+            alt="Gadget Showcase"
+            className="w-full max-h-96 object-contain drop-shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ContactSection = () => (
+  <section className="py-16 px-6 bg-gray-900 text-white text-center">
+    <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+    <p className="mb-4">Join our Telegram or reach out via WhatsApp or Email.</p>
+    <div className="flex justify-center gap-4">
+      <a href="#" className="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Join Telegram</a>
+      <a href="#" className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">WhatsApp</a>
+    </div>
+  </section>
+);
+
 const AllProducts = React.lazy(() => import('../Components/AllProducts'));
 
 export default function GadgetsPage() {
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4; // Number of items per page
+  const itemsPerPage = 4;
 
   useEffect(() => {
-    try {
-      const fetchProducts = async () => {
+    const fetchProducts = async () => {
+      try {
         const url = 'https://fake-api-one-rust.vercel.app/api/gadget/all_products';
         const res = await fetch(url);
         const data = await res.json();
         setProducts(data);
-      };
-      fetchProducts();
-    } catch (error) {
-      setError(error);
-    }
+        setFilteredProducts(data);
+
+        // Derive unique categories
+        const categorySet = new Set(data.map((item) => item.category || 'Uncategorized'));
+        setCategories(['All', ...Array.from(categorySet)]);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchProducts();
   }, []);
 
-  // Pagination logic
-  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+    if (category === 'All') {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter(product => product.category === category);
+      setFilteredProducts(filtered);
+    }
+  };
+
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentProducts = products.slice(startIndex, endIndex);
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -37,8 +100,10 @@ export default function GadgetsPage() {
   };
 
   return (
-    <div className="py-10 bg-slate-200">
-      <div className="2xl:max-w-[80%] bg-white rounded-md py-6 shadow-lg xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
+    <div className="bg-slate-200">
+      {/* Hero Section */}
+      <GadgetHero />
+      <div className="2xl:max-w-[80%] max-w-7xl py-10 bg-white rounded-xl my-10 mx-auto">
         {/* Page Heading */}
         <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto">
           <div className="mb-3">
@@ -50,19 +115,37 @@ export default function GadgetsPage() {
           </p>
         </div>
 
+        {/* Category Filter */}
+        <div className="flex justify-center flex-wrap gap-3 my-6">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+              className={`px-4 py-2 rounded-full border text-sm font-medium transition-all duration-300 ${
+                selectedCategory === category ? 'bg-blue-700 text-white' : 'bg-gray-200 text-gray-700'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Error Message */}
+        {error && (
+          <div className="text-center text-red-600 py-4">
+            Failed to load products. Please try again later.
+          </div>
+        )}
+
         {/* Products Grid */}
         <div className="mt-7 py-3 px-2 grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3">
-          {currentProducts.length > 0 ? (
-            currentProducts.map((product) => (
-              <Suspense fallback={<Loader />} key={product.id}>
-                <productsContext.Provider value={product}>
-                  <AllProdloaderucts product={product} />
-                </productsContext.Provider>
+          {currentProducts.map((product) => (
+            <productsContext.Provider value={product} key={product._id}>
+              <Suspense fallback={<Loader />}>
+                <AllProducts />
               </Suspense>
-            ))
-          ) : (
-            <p className="text-center col-span-full">No products available.</p>
-          )}
+            </productsContext.Provider>
+          ))}
         </div>
 
         {/* Pagination Controls */}
@@ -74,7 +157,10 @@ export default function GadgetsPage() {
             Prev
           </button>
           {[...Array(totalPages)].map((_, index) => (
-            <button key={index} onClick={() => handlePageChange(index + 1)} className={`px-3 py-1 rounded-md transition-transform duration-200 transform hover:scale-110 shadow-lg ${
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={`px-3 py-1 rounded-md transition-transform duration-200 transform hover:scale-110 shadow-lg ${
                 currentPage === index + 1
                   ? 'bg-gradient-to-r from-blue-500 to-blue-700 text-white'
                   : 'bg-gray-200 text-gray-700'
@@ -91,6 +177,7 @@ export default function GadgetsPage() {
           </button>
         </div>
       </div>
+      <ContactSection />
     </div>
   );
 }

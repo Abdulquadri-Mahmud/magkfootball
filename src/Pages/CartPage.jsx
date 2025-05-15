@@ -74,17 +74,19 @@ export default function CartPage() {
   return (
     <div className='bg-zinc-100'>
         <div className="md:py-10 py-5 2xl:max-w-[80%] xl:max-w-[90%] lg:max-w-[100%] max-w-[97%] mx-auto">
-            <div className="flex gap-1 items-center">
-                <Link to={'/'} className='text-[13px] text-gray-500'>Home</Link>
-                <PiGreaterThan className='text-[13px] text-gray-500 pt-1'/>
-                <Link to={'/cart'} className='text-[13px] text-gray-500'>My Carts</Link>
-            </div>
-            <div className='mt-5'>
-                <div className="">
-                    <h1 className='text-2xl font-medium'>Shopping Cart</h1>
+            <div className='bg-white p-3 rounded-md shadow-lg '>
+                <div className="flex gap-1 items-center">
+                    <Link to={'/'} className='text-[13px] text-gray-500'>Home</Link>
+                    <PiGreaterThan className='text-[13px] text-gray-500 pt-1'/>
+                    <Link to={'/cart'} className='text-[13px] text-gray-500'>My Carts</Link>
                 </div>
-                <div className='border border-gray-300 font-medium text-xl text-blue-900 mt-6 py-3 rounded-md' >
-                    <Link to={'/gadgets'} fontWeight={500} className='text- flex items-center justify-center gap-2'><BiLeftArrowAlt/> Continue Shopping</Link>
+                <div className='mt-5'>
+                    <div className="">
+                        <h1 className='text-2xl font-medium text-blue-800'>Shopping Cart</h1>
+                    </div>
+                    <div className='border border-gray-300 font-medium text-xl text-blue-900 mt-6 py-3 rounded-md' >
+                        <Link to={'/gadgets'} fontWeight={500} className='text- flex items-center justify-center gap-2'><BiLeftArrowAlt/> Continue Shopping</Link>
+                    </div>
                 </div>
             </div>
             <div className="mt-7 md:flex block justify-center gap-2 flex-wrap">
@@ -106,12 +108,12 @@ export default function CartPage() {
                                     total += item.productPrice * item.quantity ;
 
                                     return (
-                                        <tr className='px-2' key={index}>
+                                        <tr className='px-2 border-b border-b-gray-200' key={index}>
                                             <td className='py-2'>
                                                 <img src={item.productImage} alt="" className='rounded-md max-w-[50px] max-h-[50px]'/>
                                             </td>
                                             <td className=' py-2 font-medium text-[14px] truncate'>
-                                                {item.productName.slice(0, 20)}...
+                                                {item.productName?.slice(0, 20)}...
                                             </td>
                                             <td className=' py-2 font-medium'>
                                                 <div className="flex justify-center items-center h-full gap-2">

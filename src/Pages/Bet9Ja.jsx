@@ -1,5 +1,6 @@
 import React, { createContext, Suspense, useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
+import { useSelector } from 'react-redux'
 
 export const Bet9JaContext = createContext();
 const ShowBet9ja = React.lazy(() => import('../Components/display_betslip/ShowBet9ja'));
@@ -9,6 +10,8 @@ export default function Bet9Ja() {
   const [filteredDatas, setFilteredDatas] = useState([]); // To store filtered 'Bet9ja' items
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Adjust the number of items per page as needed
+  const { currentAdmin } = useSelector((state) => state.admin);
+  console.log(currentAdmin ? currentAdmin : "No Admin Found");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -19,7 +22,7 @@ export default function Bet9Ja() {
 
         if (data.success === false) {
           throw new Error('Error while fetching data!');
-        }
+      }
 
         // Filter items where category === 'Bet9ja'
         const filtered = data.filter((item) => item.category === 'Bet9ja');

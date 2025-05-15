@@ -7,7 +7,8 @@ import { addToCart } from '../store/cart/cartReducer';
 import { useDispatch } from 'react-redux';
 import { FaCartShopping } from 'react-icons/fa6';
 
-import { FaChartLine, FaFootballBall, FaGamepad } from "react-icons/fa";
+import { FaChartLine, FaGamepad } from "react-icons/fa";
+import { IoMdFootball } from "react-icons/io";
 
 const PRODUCTS_PER_PAGE = 8;
 
@@ -162,7 +163,7 @@ const PromotionBanner = () => {
       <div className="grid md:grid-cols-3 gap-6">
         {/* Feature 1 */}
         <div className="bg-blue-950 rounded-xl p-5 shadow-md hover:shadow-xl transition duration-300">
-          <FaFootballBall className="text-yellow-400 text-3xl mb-3" />
+          <IoMdFootball className="text-yellow-400 text-3xl mb-3" />
           <h3 className="text-xl font-semibold mb-2">Elite Football Insight</h3>
           <p className="text-sm text-gray-200">
             Get data-driven match predictions, betting tips, and weekly betslips created by seasoned analysts.
@@ -298,7 +299,7 @@ export default function Home() {
         {/* Brief Content Section */}
         <div className="text-center lg:max-w-[50%] max-w-[90%] mx-auto bg-white rounded-b-xl md:p-4 p-2 md:mt -mt-6">
           <div className="mb-5">
-            <h1 className="relative font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-800 md:text-5xl text-3xl">
+            <h1 className="relative font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-yellow-400 md:text-5xl text-3xl">
               MAGKK Football News & Insights
             </h1>
           </div>

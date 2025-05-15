@@ -5,6 +5,7 @@ import BetPage from '../Pages/BetPage';
 import Footer from '../Components/Footer';
 import GadgetsPage from '../Pages/GadgetsPage';
 import NewsPage from '../Pages/NewsPage';
+
 import Sign_In from '../auth/Sign_In';
 import Sign_Up from '../auth/Sign_Up';
 import Header from '../Components/Header';
@@ -58,6 +59,8 @@ export default function AppRoutes() {
                   <Route path='/delete-order' element={<DeleteOrder/>}/>
                   <Route path='/order-list' element={<OrderList/>}/>
                 </Route>
+
+                <Route path='/admin-login' element={<Login/>}/>
                 
                 {/* User Routes */}
                 <Route path='/signin' element={<Sign_In/>}/>

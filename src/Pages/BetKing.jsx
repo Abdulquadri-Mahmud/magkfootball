@@ -28,7 +28,6 @@ export default function Bet9Ja() {
         const filtered = data.filter((item) => item.category === 'BetKing');
         setDatas(data); // Full data
         setFilteredDatas(filtered); // Filtered 'Bet9ja' items
-        console.log(filtered);
         
       } catch (error) {
         console.log(error);

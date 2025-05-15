@@ -87,8 +87,8 @@ export default function CreateOrder() {
   return (
     <div className="bg-slate-200">
       <div className="2xl:max-w-[80%] xl:max-w-[90%] max-w-[100%] mx-auto">
-        <div>
-          <div className="py-4 px-4 bg-white flex gap-2 font-medium text-sm">
+        <div className='py-8'>
+          <div className="py-6 mx-2 px-4 bg-white flex gap-2 rounded-md font-medium text-sm">
             <p>
               <Link to={'/'}>Home / </Link>
             </p>
@@ -110,50 +110,22 @@ export default function CreateOrder() {
                 <div className="grid md:grid-cols-2 gap-3 grid-cols-1 p-3">
                   <div>
                     <p>First Name</p>
-                    <input
-                      onChange={handleChange}
-                      defaultValue={formData.firstname}
-                      type="text"
-                      id="firstname"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
-                      placeholder="First Name"
-                    />
+                    <input onChange={handleChange} defaultValue={formData.firstname} type="text" id="firstname" className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2" placeholder="First Name"/>
                   </div>
                   <div>
                     <p>Last Name</p>
-                    <input
-                      onChange={handleChange}
-                      defaultValue={formData.lastname}
-                      type="text"
-                      id="lastname"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
-                      placeholder="Last Name"
-                    />
+                    <input onChange={handleChange} defaultValue={formData.lastname} type="text" id="lastname" className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2" placeholder="Last Name"/>
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-3 grid-cols-1 p-3">
                   <div>
                     <p>Phone Number</p>
-                    <input
-                      onChange={handleChange}
-                      defaultValue={formData.phone}
-                      type="text"
-                      id="phone"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
-                      placeholder="Phone Number"
-                    />
+                    <input onChange={handleChange} defaultValue={formData.phone} type="text" id="phone" className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2" placeholder="Phone Number"/>
                   </div>
                   <div>
                     <p>Email Address</p>
-                    <input
-                      onChange={handleChange}
-                      defaultValue={formData.email}
-                      type="email"
-                      id="email"
-                      className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2"
-                      placeholder="Email Address"
-                    />
+                    <input onChange={handleChange} defaultValue={formData.email} type="email" id="email" className="outline-none border border-gray-200 placeholder:text-sm font-normal w-full text-sm rounded-md p-2" placeholder="Email Address"/>
                   </div>
                 </div>
 
