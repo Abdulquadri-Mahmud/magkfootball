@@ -10,8 +10,6 @@ export default function Bet9Ja() {
   const [filteredDatas, setFilteredDatas] = useState([]); // To store filtered 'Bet9ja' items
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Adjust the number of items per page as needed
-  const { currentAdmin } = useSelector((state) => state.admin);
-  console.log(currentAdmin ? currentAdmin : "No Admin Found");
 
   useEffect(() => {
     const fetchUsers = async () => {

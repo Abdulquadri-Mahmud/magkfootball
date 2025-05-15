@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function PageNotFound() {
   return (
-    <div className='py-10'>
+    <div className='py-20'>
       <div className=" w-[350px] py-6 px-3 rounded-md shadow-md mx-auto">
         <h2 className={'text-7xl font-medium text-center'}>404</h2>
         <p className="font-medium text-center pt-5">Page Not Found</p>

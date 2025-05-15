@@ -4,7 +4,7 @@ import { MdOutlineMarkEmailUnread } from 'react-icons/md'
 import { TbPasswordUser } from 'react-icons/tb'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { adminSigninFailure, adminSigninStart, adminSigninSuccess } from '../store/adminReducer/adminReducer'
+import { adminSigninFailure, adminSigninStart, adminSigninSuccess } from '../../store/adminReducer/adminReducer'
 
 export default function Login() {
     const [formData, setFormData] = useState({});
@@ -56,7 +56,7 @@ export default function Login() {
             }
 
             dispatch(adminSigninSuccess(data));
-            navigate('/dashboard');
+            navigate(-1);
                 
         } catch (error) {
             console.log(error);
@@ -89,8 +89,8 @@ export default function Login() {
     }
 
   return (
-    <div className='md:py-20 py-12 bg-blue-900 flex justify-center items-center h-[100vh]'>
-        <div className="relative bg-white sm:w-[350px] border w-[97%] mx-auto p-3 rounded-md shadow-xl">
+    <div className='md:py-20 py-12 bg-slate-200 flex justify-center items-center h-[100vh]'>
+        <div className="relative bg-white w-[350px] border border-gray-200 mx-auto p-3 rounded-md shadow-xl">
             <div className="">
                 <h2 className="text-3xl font-medium text-center">Admin Login</h2>
                 <p className="text-center text-gray-400 text-sm pt-2">Kindly type in your details to log in</p>
@@ -118,7 +118,7 @@ export default function Login() {
                 <div className="w-full mt-6">
                     <button type='submit' className='bg-blue-900 w-full py-2 rounded-md text-white font-medium text-xl'>
                         {
-                            loading ? 'Loading...' : 'Log In'
+                            loading ? 'Authenticating...' : 'Log In'
                         }
                     </button>
                 </div>

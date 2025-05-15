@@ -28,6 +28,7 @@ import CreateOrder from '../Pages/Order/CreateOrder';
 import DeleteOrder from '../Pages/Order/DeleteOrder';
 import OrderList from '../Pages/Order/OrderList';
 import Readmore from '../Pages/Readmore';
+import Login from '../auth/admin/Login';
 
 export default function AppRoutes() {
   return (

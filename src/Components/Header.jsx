@@ -4,6 +4,7 @@ import { FaCartShopping } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import Settings from './settings/Settings'
 import { GiSoccerKick } from 'react-icons/gi'
+import { MdOutlineAdminPanelSettings } from 'react-icons/md'
 
 export default function Header() {
     const { currentUser } = useSelector((state) => state.user);
@@ -24,7 +25,7 @@ export default function Header() {
   return (
     <div className=" bg-white pt-2 top-0 sticky z-20">
         <div className='xl:max-w-[90%] mx-auto text-gray-800 md:px-0 px-2 '>
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center md:pb-0 pb-2'>
                 <div className="">
                     <Link to={'/'}>
                         {/* <img src="/logo.jpg" alt="logo" className='max-w-[150px] rounded-'/> */}
@@ -44,15 +45,17 @@ export default function Header() {
                                 <Settings/>
                             </>
                         ) : (
-                            <div className="flex item-center font-medium md:gap-4 gap-2 py-1">
+                            <div className="font-semibold md:w-16 w-16  text-center uppercase bg-cyan-400 py-1 rounded-full">
                                 <Link to={'/signin'} className='py-1'>Log in</Link>
-                                {/* <span>|</span> */}
-                                <div className="hidden md:block md:w-16 w-16  text-center uppercase bg-cyan-400 py-1 rounded-full">
-                                    <Link to={'/signup'} className=''>Join</Link>
-                                </div>
                             </div>
                         )
                     }
+                    <div className="">
+                        <Link to={'/admin-login'} className=''>
+                            <span className="hidden md:block font-semibold">Admin</span>
+                            <MdOutlineAdminPanelSettings className='block md:hidden text-2xl text-blue-900'/>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
