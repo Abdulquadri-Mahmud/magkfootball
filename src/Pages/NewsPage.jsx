@@ -9,12 +9,21 @@ import { addToCart } from "../store/cart/cartReducer";
 import { FaCartShopping } from "react-icons/fa6";
 
 const HeroSection = () => (
-  <section className="bg-blue-800 text-white py-32 px-6 text-center newshero">
-    <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to MAGKK FOOTBALL TALK</h1>
-    <p className="text-lg md:text-xl max-w-2xl mx-auto">
-      Your #1 destination for expert football insights, betting tips, and top-quality gaming gadgets.
-    </p>
-    <button className="mt-6 px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:bg-gray-200 transition">Join Telegram</button>
+  <section className="bg-blue-900 text-white lg:pt-32 pt-20 pb-10 px-6 text-start flex gap-4 justify-between lg:flex-row flex-col flex-wrap">
+    <div className="flex-1 max-w-lg mx-auto lg:text-start text-center ">
+      <h1 className="text-4xl lg:text-5xl font-bold mb-4">Welcome to MAGKK FOOTBALL TALK</h1>
+      <p className="text-lg lg:text-xl">
+        Your #1 destination for expert football insights, betting tips, and top-quality gaming gadgets.
+      </p>
+      <button className="mt-6 px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:bg-gray-200 transition">
+        <Link to={'https://x.com/footballbymagkk?t=xd8TFHhpxilWLUsJ791pGw&s=09'}>Join Twitter</Link>
+      </button>
+    </div>
+    <div className="lg:w-1/2 h-[350px] w-full relative z-10 ">
+      <img src="/soccer.png" alt="MAGKK FOOTBALL TALK"  className="w-full max-h-full border-2 border-white rounded-xl"/>
+      <div className="w-[200px] h-[200px] absolute left-0 bottom-0 rounded-tr-full bg-white -z-10"></div>
+      <div className="lg:w-[200px] w-[300px] lg:h-full h-[90%] absolute right-0 top-0 rounded-b-full bg-white -z-10"></div>
+    </div>
   </section>
 );
 
@@ -174,8 +183,8 @@ const ContactSection = () => (
     <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
     <p className="mb-4">Join our Telegram or reach out via WhatsApp or Email.</p>
     <div className="flex justify-center gap-4">
-      <a href="#" className="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Join Telegram</a>
-      <a href="#" className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">WhatsApp</a>
+      <Link to="https://x.com/footballbymagkk?t=xd8TFHhpxilWLUsJ791pGw&s=09" className="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Join Twitter</Link>
+      <Link to="https://chat.whatsapp.com/JjS55KgMcBG8HmLqydYdUC" className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">WhatsApp</Link>
     </div>
   </section>
 );

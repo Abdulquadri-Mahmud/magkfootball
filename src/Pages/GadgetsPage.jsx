@@ -1,35 +1,30 @@
 import React, { useEffect, Suspense, useState, createContext } from 'react';
 import Loader from '../Components/loader/Loader';
+import { Link } from 'react-router-dom';
 
 export const productsContext = createContext();
 
 const GadgetHero = () => {
   return (
     <section className="bg-blue-900 text-white py-16 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
         {/* Text Content */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
             Level Up Your Tech with MAGKK Gadgets
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-6">
+          <p className="text-lg lg:text-xl text-gray-200 mb-6">
             Explore clean, affordable, and durable gadgets—from gaming accessories to mobile tech. Shop smart. Game smarter.
           </p>
-          <a
-            href="#store"
-            className="inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
-          >
+          <Link to="/gadgets"
+            className="inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
             Shop Now
-          </a>
+          </Link>
         </div>
 
         {/* Image / Visual */}
-        <div className="md:w-1/2">
-          <img
-            src="/gadget.png"
-            alt="Gadget Showcase"
-            className="w-full max-h-96 object-contain drop-shadow-lg"
-          />
+        <div className="lg:w-1/2 w-full bg-white rounded-full">
+          <img src="/gadget.png" alt="Gadget Showcase" className="w-full max-h-96 object-contain drop-shadow-lg"/>
         </div>
       </div>
     </section>
