@@ -23,7 +23,7 @@ const GadgetHero = () => {
         </div>
 
         {/* Image / Visual */}
-        <div className="lg:w-1/2 w-full bg-white rounded-full">
+        <div className="lg:w-1/2 w-full bg-white sm:p-4 p-8 rounded-full">
           <img src="/gadget.png" alt="Gadget Showcase" className="w-full max-h-96 object-contain drop-shadow-lg"/>
         </div>
       </div>

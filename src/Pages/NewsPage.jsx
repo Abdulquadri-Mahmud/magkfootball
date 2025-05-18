@@ -19,10 +19,10 @@ const HeroSection = () => (
         <Link to={'https://x.com/footballbymagkk?t=xd8TFHhpxilWLUsJ791pGw&s=09'}>Join Twitter</Link>
       </button>
     </div>
-    <div className="lg:w-1/2 h-[350px] w-full relative z-10 ">
+    <div className="lg:w-1/2 sm:h-[350px] w-full relative z-10 ">
       <img src="/soccer.png" alt="MAGKK FOOTBALL TALK"  className="w-full max-h-full border-2 border-white rounded-xl"/>
       <div className="w-[200px] h-[200px] absolute left-0 bottom-0 rounded-tr-full bg-white -z-10"></div>
-      <div className="lg:w-[200px] w-[300px] lg:h-full h-[90%] absolute right-0 top-0 rounded-b-full bg-white -z-10"></div>
+      <div className="lg:w-[200px] sm:w-[300px] lg:h-full h-[90%] absolute right-0 top-0 rounded-b-full bg-white -z-10"></div>
     </div>
   </section>
 );
